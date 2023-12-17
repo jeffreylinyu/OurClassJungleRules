@@ -19,7 +19,7 @@ jobs:
       # 可以在這裡添加 Vue.js 相關的打包步驟
       - name: Install Node.js and dependencies
         run: |
-          curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
           sudo apt-get install -y nodejs
           npm install
       
@@ -32,7 +32,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
+
       # Docker 相關步驟
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
