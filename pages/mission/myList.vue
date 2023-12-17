@@ -73,7 +73,7 @@
                         <span>建立新任務</span>
                         <el-popover :width="700" trigger="click">
                             <template #reference>
-                                <img class="information" src="/_nuxt/assets/images/Icon/information.svg" alt="close">
+                                <img class="information" src="@/assets/images/Icon/information.svg" alt="close">
                             </template>
                             <div class="container">
                                 <ol>
