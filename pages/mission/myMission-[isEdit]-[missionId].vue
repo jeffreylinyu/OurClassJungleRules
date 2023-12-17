@@ -57,7 +57,7 @@
 
             <div class="mission-day">
                 <div class="mission-head2">
-                    <div v-for="i in (scriptData.day)" :id="`mission-head2-${i}`" @click="missionHeadClick(i)"
+                    <div v-for="i,index in (scriptData.day)" :key="index" :id="`mission-head2-${i}`" @click="missionHeadClick(i)"
                         class="mission-head2-last">第
                         {{ i }} 日</div>
                     <!-- <div class="mission-head-unselect"></div> -->
@@ -112,7 +112,7 @@
                                 <div class="mission-body-box-question">?</div>
                                 <div class="mission-body-box-head">{{ currentDetail.stuContent }}</div>
                             </div>
-                            <div v-for="config, index in currentDetail.studentConfigs" class="mission-body-box-row1">
+                            <div v-for="config, index in currentDetail.studentConfigs" :key="index" class="mission-body-box-row1">
                                 <div class="mission-body-box-row2">
                                     <div class="mission-body-box-answer">{{ numberToLetter(index + 1) }}</div>
                                     <div class="mission-body-box-text">{{ config.stuDescription }}</div>
@@ -132,7 +132,7 @@
                                 <div class="mission-body-box-question">?</div>
                                 <div class="mission-body-box-head">{{ currentDetail.parContent }}</div>
                             </div>
-                            <div v-for="config, index in currentDetail.parentConfigs" class="mission-body-box-row1">
+                            <div v-for="config, index in currentDetail.parentConfigs" :key="index" class="mission-body-box-row1">
                                 <div class="mission-body-box-row2">
                                     <div class="mission-body-box-answer">{{ numberToLetter(index + 1) }}</div>
                                     <div class="mission-body-box-text">{{ config.parDescription }}</div>
@@ -150,7 +150,7 @@
                     <!-- 額外資訊 -->
 
                     <div class="mission-body-head2">額外資訊</div>
-                    <div class="mission-body-row2" v-for="info, index in currentDetail.additionalInfo">
+                    <div class="mission-body-row2" v-for="info, index in currentDetail.additionalInfo" :key="index">
                         <div class="mission-body-sub">資訊 {{ index + 1 }}</div>
                         <div class="mission-body-text">{{ info }}</div>
                     </div>
@@ -179,7 +179,7 @@
                                 </div>
                             </div>
 
-                            <div v-for="item in stuList" class="mission-count-row2">
+                            <div v-for="item,i in stuList" :key="i" class="mission-count-row2">
                                 <div class="mission-count-choose">
                                     <div class="mission-count-sub1">{{ item.text }}</div>
                                     <div class="mission-count-sub2">秩序效果：{{ item.orderly }}，關係效果：{{ item.relation }}</div>
@@ -210,7 +210,7 @@
                                 </div>
                             </div>
 
-                            <div v-for="item in parList" class="mission-count-row2">
+                            <div v-for="item,i in parList" :key="i" class="mission-count-row2">
                                 <div class="mission-count-choose">
                                     <div class="mission-count-sub1">{{ item.text }}</div>
                                     <div class="mission-count-sub2">秩序效果：{{ item.orderly }}，關係效果：{{ item.relation }}</div>
@@ -296,7 +296,7 @@
                             <div style="width: 25%;">關係</div>
                             <div style="width: 10%;">編輯</div>
                         </div>
-                        <div v-for="total in totalList" class="mission-body-scoring-itemBox">
+                        <div v-for="total,i in totalList" :key="i" class="mission-body-scoring-itemBox">
                             <div style="width: 40%;">第 {{ total.period }} 日得分小計</div>
                             <div style="width: 25%;">{{ total.orderly }}</div>
                             <div style="width: 25%;">{{ total.relation }}</div>
@@ -504,11 +504,11 @@
                                 <div v-for="option, index in fillScoreOption" :key="option.id" class="mission-pop-row3">
                                     <div class="mission-pop-num">{{ index + 1 }}</div>
                                     <select v-model="option.stuAns" class="select mission-pop-select">
-                                        <option v-for="config, i in currentScoreDetail.studentConfigs" :value="config.id">{{
+                                        <option v-for="config, i in currentScoreDetail.studentConfigs" :key="i" :value="config.id">{{
                                             `${numberToLetter(i + 1)} ${config.stuDescription}` }}</option>
                                     </select>
                                     <select v-model="option.parAns" class="select mission-pop-select">
-                                        <option v-for="config, i in currentScoreDetail.parentConfigs" :value="config.id">{{
+                                        <option v-for="config, i in currentScoreDetail.parentConfigs" :key="i" :value="config.id">{{
                                             `${numberToLetter(i + 1)} ${config.parDescription}` }}</option>
                                     </select>
                                     <div @click="removeOptionItem(option)" class="mission-pop-close">-</div>

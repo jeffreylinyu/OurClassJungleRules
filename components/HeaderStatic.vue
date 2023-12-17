@@ -53,6 +53,9 @@
             <nuxt-link to="/manage/script">
               <div class="subitem">劇本教材管理</div>
             </nuxt-link>
+            <nuxt-link to="/manage/purchaseInformation">
+              <div class="subitem">購買資訊</div>
+            </nuxt-link>
             <nuxt-link to="/manage/statistics">
               <div class="subitem" style="border-bottom: none;">資料統計</div>
             </nuxt-link>
@@ -133,6 +136,9 @@
           </nuxt-link>
           <nuxt-link to="/manage/script" class="link" :class="{ 'link-action': routeName == 'manage-script' }">
             劇本教材管理
+          </nuxt-link>
+          <nuxt-link to="/manage/purchaseInformation" class="link" :class="{ 'link-action': routeName == 'manage-purchaseInformation' }">
+            購買資訊
           </nuxt-link>
           <nuxt-link to="/manage/statistics" class="link" :class="{ 'link-action': routeName == 'none' }">
             資料統計
