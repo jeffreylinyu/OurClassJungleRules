@@ -33,15 +33,15 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64  # 只使用單一平台，可根據你的需求調整
           tags: aibolee/ourclass:latest
 
-      # # 遠端 VM 部署步驟
-      # - name: SSH 到遠端 VM
-      #   uses: appleboy/ssh-action@v0.1.4
-      #   with:
-      #     host: ${{ secrets.REMOTE_VM_HOST }}
-      #     username: ${{ secrets.REMOTE_VM_USERNAME }}
-      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     script: |
-      #       sh /home/liqingbao/deploy_front.sh
+      # 遠端 VM 部署步驟
+      - name: SSH 到遠端 VM
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.REMOTE_VM_HOST }}
+          username: ${{ secrets.REMOTE_VM_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sh /home/liqingbao/deploy_front.sh
