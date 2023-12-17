@@ -22,9 +22,10 @@ jobs:
           curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
           sudo apt-get install -y nodejs
           npm install
-
+      
+      # 打包腳本是 npm run build
       - name: Build Vue.js App
-        run: npm run build  # 假設你的打包腳本是 npm run build
+        run: npm run build  
 
       # Docker 相關步驟
       - name: Build and push Docker image
@@ -35,12 +36,12 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: aibolee/ourclass:latest
 
-      # 遠端 VM 部署步驟
-      - name: SSH 到遠端 VM
-        uses: appleboy/ssh-action@v0.1.4
-        with:
-          host: ${{ secrets.REMOTE_VM_HOST }}
-          username: ${{ secrets.REMOTE_VM_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            sh /home/liqingbao/deploy_front.sh
+      # # 遠端 VM 部署步驟
+      # - name: SSH 到遠端 VM
+      #   uses: appleboy/ssh-action@v0.1.4
+      #   with:
+      #     host: ${{ secrets.REMOTE_VM_HOST }}
+      #     username: ${{ secrets.REMOTE_VM_USERNAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       sh /home/liqingbao/deploy_front.sh
