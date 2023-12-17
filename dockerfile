@@ -8,7 +8,7 @@ RUN npm ci && npm cache clean --force
 RUN npm run build
 
 
-FROM keymetrics/pm2:latest-alpine
+FROM keymetrics/pm2:16-alpine
 
 RUN mkdir -p /nuxt-app/.output
 WORKDIR /nuxt-app/.output
