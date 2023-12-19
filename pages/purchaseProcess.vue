@@ -30,14 +30,15 @@
                             <div class="title-text">購買內容</div>
                         </div>
                         <div class="content-box">
-                            <div class="item-box">
-                                <div class="item-name">註冊碼售價</div>
+                            <div v-for="item of productDataList" class="item-box">
+                                <div class="item-name">{{ item.name }}</div>
                                 <div class="price-box">
-                                    <div class="price">$1,350</div>
+                                    <div class="price">${{item.price}}</div>
                                     <div class="original-price">$1,500</div>
                                 </div>
 
                             </div>
+                            
                             <div class="item-title">購買份數</div>
                             <div><input v-model="payData.quantity" class="input" min="1"
                                     style="margin-bottom: 10px; width:100px" type="number">
@@ -89,8 +90,20 @@
 </template>
 
 <script setup>
-import { order } from "~/api/cash";
+import { order,getProducts } from "~/api/cash";
 import { ElMessage } from 'element-plus'
+
+const productDataList = reactive([])
+const init = async () => {
+    let products = await getProducts()
+    let productList = JSON.parse(JSON.stringify(products.data.value.data.list)) 
+    productDataList.push(...productList)
+    
+}
+
+nextTick(() => {
+    init()
+})
 
 // 創建一個引用
 const submitButton = ref(null);

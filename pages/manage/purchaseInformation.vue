@@ -12,19 +12,19 @@
                 </div>
                 <div>
                     <span>電話</span>
-                    <el-input v-model="input" placeholder="請輸入電話" />
+                    <el-input v-model="searchData.phone" placeholder="請輸入電話" />
                 </div>
                 <div>
                     <span>名稱</span>
-                    <el-input v-model="input" placeholder="請輸入名稱" />
+                    <el-input v-model="searchData.recipient" placeholder="請輸入名稱" />
                 </div>
                 <div>
                     <span>金額</span>
-                    <el-input v-model="input" placeholder="請輸入金額" />
+                    <el-input v-model="searchData.totalPrice" placeholder="請輸入金額" />
                 </div>
                 <div>
                     <span>email</span>
-                    <el-input v-model="input" placeholder="請輸入email" />
+                    <el-input v-model="searchData.address" placeholder="請輸入email" />
                 </div>
                 <el-button @click="init" type="primary">搜尋</el-button>
             </div>
