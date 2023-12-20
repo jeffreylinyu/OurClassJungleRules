@@ -71,7 +71,14 @@ export const useAuthStore = defineStore("auth", {
       this.isLogin = true
       const cookieToken = useCookie('token', { maxAge: 60 * 60 * 24 * 7 })
       cookieToken.value = this.token
-      this.setPermissions(data.role)
+      this.permissions = data.role
+      const cookiePermissions = useCookie('permissions', { maxAge: 60 * 60 * 24 * 7 })
+      cookiePermissions.value = data.role
+      if (data.hasOwnProperty('checkLicense')) {
+        if (data.checkLicense) {
+          this.checkLicense = true
+        }
+      }
       const cookieInfo = useCookie('info', { maxAge: 60 * 60 * 24 * 7 })
       cookieInfo.value = JSON.stringify(data)
     },
