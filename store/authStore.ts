@@ -74,7 +74,7 @@ export const useAuthStore = defineStore("auth", {
       cookiePermissions.value = data.role
       const cookieInfo = useCookie('info', { maxAge: 60 * 60 * 24 * 7 })
       cookieInfo.value = JSON.stringify(data)
-      // this.reloadPage()
+      this.reloadPage()
     },
     setPermissions(roleList) {
       let permissions = roleList[0].authority

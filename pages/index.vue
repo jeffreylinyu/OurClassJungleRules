@@ -73,6 +73,7 @@ import { getScriptByNoToken as getScript } from "~/api/script";
 import { useAuthStore } from '@/store/authStore';
 
 let urlParams = utilities.getUrlParams()
+const router = useRouter()
 if (!!urlParams) {
   console.log("urlParams",urlParams)
   useAuthStore().googleLogin(urlParams)
