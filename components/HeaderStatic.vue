@@ -123,7 +123,7 @@
           我的任務
         </nuxt-link>
 
-        <div v-if="isLogin && permissions !== 'ROLE_USER'">
+        <div v-if="isLogin && permissions === 'ROLE_ADMIN'">
           <nuxt-link to="/manage/user" style="margin-top: 16px;" class="link"
             :class="{ 'link-action': routeName == 'manage-user' }">
             使用者管理
@@ -179,7 +179,12 @@ import { storeToRefs } from 'pinia'
 import { getScriptByNoToken as getScript } from "~/api/script";
 
 let auth = useAuthStore()
+
+
 const { isLogin, permissions, checkLicense } = storeToRefs(auth)
+
+console.log(isLogin)
+console.log(permissions)
 
 const handleSignOut = () => {
   useAuthStore().signOut()

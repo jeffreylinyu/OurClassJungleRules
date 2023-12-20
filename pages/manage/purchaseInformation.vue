@@ -19,8 +19,12 @@
                     <el-input v-model="searchData.recipient" placeholder="請輸入名稱" />
                 </div>
                 <div>
-                    <span>金額</span>
-                    <el-input v-model="searchData.totalPrice" placeholder="請輸入金額" />
+                    <span>最小金額</span>
+                    <el-input v-model="searchData.minPrice" placeholder="請輸入金額" />
+                </div>
+                <div>
+                    <span>最大金額</span>
+                    <el-input v-model="searchData.maxPrice" placeholder="請輸入金額" />
                 </div>
                 <div>
                     <span>email</span>
@@ -34,13 +38,15 @@
                     </el-table-column>
                     <el-table-column prop="phone" label="電話" sortable min-width="160">
                     </el-table-column>
-                    <el-table-column prop="recipient" label="名稱" sortable min-width="160">
+                    <el-table-column prop="recipient" label="購買人名稱" sortable min-width="160">
                     </el-table-column>
                     <el-table-column prop="totalPrice" label="金額" sortable min-width="160">
                     </el-table-column>
                     <el-table-column prop="address" label="email" sortable min-width="160">
                     </el-table-column>
                     <el-table-column prop="createTime" label="購買時間" sortable min-width="160">
+                    </el-table-column>
+                    <el-table-column prop="status" label="購買狀態" sortable min-width="160">
                     </el-table-column>
                 </el-table>
             </div>
@@ -57,16 +63,33 @@ const searchData = reactive({
     orderId:"",
     phone:"",
     recipient:"",
-    totalPrice:"",
-    address:""
+    minPrice:"",
+    maxPrice:"",
+    address:"",
+    status:""
 })
 
 async function init() {
     allData.length = 0
     const { data } = await getOrder(JSON.parse(JSON.stringify(searchData)) )
     let list = data.value.data.list
-    allData.push(...list)
-    console.log("allData", allData)
+
+    // 映射狀態碼到中文描述
+    const statusMapping = {
+        0: '付款成功',
+        1: '未付款',
+        2: '付款失敗'
+        // 添加其他可能的狀態碼
+    };
+        // 將狀態碼轉換成中文描述
+    const mappedList = list.map(item => ({
+        ...item,
+        status: statusMapping[item.status] || '未知狀態'
+    }));
+
+    console.log(mappedList);
+    allData.push(...mappedList);
+    console.log("allData", allData);
 }
 
 nextTick(() => {
