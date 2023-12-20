@@ -183,8 +183,7 @@ let auth = useAuthStore()
 
 const { isLogin, permissions, checkLicense } = storeToRefs(auth)
 
-console.log(isLogin)
-console.log(permissions)
+
 
 const handleSignOut = () => {
   useAuthStore().signOut()
@@ -200,6 +199,8 @@ const setAllScript = async () => {
 }
 
 nextTick(() => {
+  console.log(isLogin)
+console.log(permissions)
   setAllScript()
 })
 let routeName = ref("")
