@@ -66,15 +66,14 @@ export const useAuthStore = defineStore("auth", {
       // this.reloadPage()
     },
     googleLogin(data) {
+      console.log("googleLogin",data)
       this.token = data.token
       this.isLogin = true
       const cookieToken = useCookie('token', { maxAge: 60 * 60 * 24 * 7 })
       cookieToken.value = this.token
-      const cookiePermissions = useCookie('permissions', { maxAge: 60 * 60 * 24 * 7 })
-      cookiePermissions.value = data.role
+      this.setPermissions(data.role)
       const cookieInfo = useCookie('info', { maxAge: 60 * 60 * 24 * 7 })
       cookieInfo.value = JSON.stringify(data)
-      this.reloadPage()
     },
     setPermissions(roleList) {
       let permissions = roleList[0].authority
