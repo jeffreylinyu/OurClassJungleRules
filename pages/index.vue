@@ -77,6 +77,7 @@ const router = useRouter()
 if (!!urlParams) {
   console.log("urlParams",urlParams)
   useAuthStore().googleLogin(urlParams)
+  router.push(router.currentRoute.value.fullPath);
 }
 
 const allScript = reactive([])
