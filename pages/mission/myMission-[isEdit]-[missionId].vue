@@ -701,9 +701,12 @@ const sendFillScoreOption = async () => {
         message: '儲存成功',
         type: 'success',
     })
+
     await setScore()
-    await setScoreList(currentScoreDetail)
-    await setScoreOverview()
+    await setScoreList(JSON.parse(JSON.stringify(currentScoreDetail)))
+    if (scriptData.dayEnd == currentPeriod.value) {
+        setScoreOverview()
+    }
     fillScoreOption.length = 0
 }
 
@@ -721,7 +724,6 @@ const init = async () => {
     taskData.endTimeStr = dayjs(taskData.endTime).format('YYYY/MM/DD')
     scriptId.value = taskData.scriptId
     await setScriptData()
-    console.log("taskData", taskData)
 }
 
 
@@ -775,6 +777,7 @@ const setScriptData = async () => {
     nextTick(() => {
         missionHeadClick(1)
         setCurrentDetail(1)
+        setCurrentScoreDetail(1)
     })
 }
 
@@ -827,6 +830,7 @@ const missionHeadClick = (id) => {
     }
 
     setCurrentDetail(id)
+    setCurrentScoreDetail(id)
 
     if (scriptData.dayEnd == id) {
         setScoreOverview()
@@ -900,6 +904,7 @@ const setCurrentScoreDetail = async (period) => {
         Object.assign(currentScoreDetail, scriptData.scriptEndingDTO)
     } else {
         let filterData = scriptData.scriptDetail.filter(o => o.period == period)
+        
         if (filterData.length > 0) {
             Object.assign(currentScoreDetail, filterData[0])
         }
