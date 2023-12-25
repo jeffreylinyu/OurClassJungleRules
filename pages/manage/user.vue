@@ -78,10 +78,10 @@
                         <div class="select-container">
                             <select class="select">
                                 <option value="">請選擇</option>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                                <option value="學校">學校</option>
+                                <option value="補習班">補習班</option>
+                                <option value="政府機關">政府機關</option>
+                                <option value="其他">其他</option>
                             </select>
                         </div>
                         <div class="btn-green">儲存</div>
@@ -128,6 +128,7 @@
                                 <option value="學校">學校</option>
                                 <option value="補習班">補習班</option>
                                 <option value="政府機關">政府機關</option>
+                                <option value="其他">其他</option>
                             </select>
                         </div>
                         <div @click="saveChanges" class="btn-green">儲存</div>

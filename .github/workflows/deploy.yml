@@ -19,16 +19,26 @@ jobs:
       # 可以在這裡添加 Vue.js 相關的打包步驟
       - name: Install Node.js and dependencies
         run: |
-          curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
           sudo apt-get install -y nodejs
           npm install
-
+          npm install pm2@latest -g
+          pm2 update
+      
+      # 打包腳本是 npm run build
       - name: Build Vue.js App
-        run: npm run build  # 假設你的打包腳本是 npm run build
+        run: npm run build  
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Docker 相關步驟
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
+<<<<<<< HEAD
         with:
           context: .
           push: true
@@ -44,3 +54,20 @@ jobs:
       #     key: ${{ secrets.SSH_PRIVATE_KEY }}
       #     script: |
       #       sh /home/liqingbao/deploy_front.sh
+=======
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64  # 只使用單一平台，可根據你的需求調整
+          tags: aibolee/ourclass:latest
+
+      # 遠端 VM 部署步驟
+      - name: SSH 到遠端 VM
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.REMOTE_VM_HOST }}
+          username: ${{ secrets.REMOTE_VM_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sh /home/liqingbao/deploy_front.sh
+>>>>>>> main

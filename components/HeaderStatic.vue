@@ -53,6 +53,9 @@
             <nuxt-link to="/manage/script">
               <div class="subitem">劇本教材管理</div>
             </nuxt-link>
+            <nuxt-link to="/manage/purchaseInformation">
+              <div class="subitem">購買資訊</div>
+            </nuxt-link>
             <nuxt-link to="/manage/statistics">
               <div class="subitem" style="border-bottom: none;">資料統計</div>
             </nuxt-link>
@@ -120,7 +123,7 @@
           我的任務
         </nuxt-link>
 
-        <div v-if="isLogin && permissions !== 'ROLE_USER'">
+        <div v-if="isLogin && permissions === 'ROLE_ADMIN'">
           <nuxt-link to="/manage/user" style="margin-top: 16px;" class="link"
             :class="{ 'link-action': routeName == 'manage-user' }">
             使用者管理
@@ -133,6 +136,9 @@
           </nuxt-link>
           <nuxt-link to="/manage/script" class="link" :class="{ 'link-action': routeName == 'manage-script' }">
             劇本教材管理
+          </nuxt-link>
+          <nuxt-link to="/manage/purchaseInformation" class="link" :class="{ 'link-action': routeName == 'manage-purchaseInformation' }">
+            購買資訊
           </nuxt-link>
           <nuxt-link to="/manage/statistics" class="link" :class="{ 'link-action': routeName == 'none' }">
             資料統計
@@ -173,7 +179,11 @@ import { storeToRefs } from 'pinia'
 import { getScriptByNoToken as getScript } from "~/api/script";
 
 let auth = useAuthStore()
+
+
 const { isLogin, permissions, checkLicense } = storeToRefs(auth)
+
+
 
 const handleSignOut = () => {
   useAuthStore().signOut()
@@ -189,6 +199,8 @@ const setAllScript = async () => {
 }
 
 nextTick(() => {
+  console.log(isLogin)
+console.log(permissions)
   setAllScript()
 })
 let routeName = ref("")

@@ -19,14 +19,17 @@
 
 <script setup>
 import { sendResetPwdMail } from "~/api/auth";
+import { ElMessage } from 'element-plus'
+
 const email = ref("")
 const send = async () => {
     let data = {
         "email": email.value,
     }
-    await sendResetPwdMail(data)
+    let response = await sendResetPwdMail(data)
+    console.log("response",response)
     ElMessage({
-        message: '已寄送重新設定密碼信件',
+        message: response.data.value.data,
         type: 'success',
     })
 }

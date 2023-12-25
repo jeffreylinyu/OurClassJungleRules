@@ -1,8 +1,8 @@
 <template>
   <div class="fourth-block">
     <div class="content-box">
-      <div class="text">同時應兼顧師生與學生間的關係，良好的關係能促使學生更樂於學習，且學會與同學
-        和睦相處，試著自行解決衝突，有利於未來人際關係發展。</div>
+      <div class="text">霸凌往往因為旁觀者的冷漠或害怕，我們希望孩子能成為正義的助人者，一同打造充滿和諧的班級文化！同時應兼顧老師與學生間的關係，好的關係不僅讓學生更喜歡學習，還能教會他們和同學和平相處，學會自己解決問題。這不僅改善現階段的人際衝突，更有助於未來的人際發展！
+</div>
       <div class="btn" @click="isPaidMemberDialogShow = true">立即取得教材</div>
     </div>
   </div>
@@ -20,7 +20,7 @@ const closeDialog = () => {
 .fourth {
   &-block {
     width: 100%;
-    height: 308px;
+    height: 335px;
     background-color: $primary3;
 
     @include respond-to('phone') {

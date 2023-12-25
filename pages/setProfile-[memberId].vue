@@ -36,6 +36,7 @@
                         <option value="學校">學校</option>
                         <option value="補習班">補習班</option>
                         <option value="政府機關">政府機關</option>
+                        <option value="其他">其他</option>
                     </select>
                 </div>
                 <div class="btn-green" @click="save">儲存</div>

@@ -69,7 +69,48 @@
         <div v-if="isShowAdd" class="popup">
             <div @click="isShowAdd = false" class="box">
                 <div @click.stop class="block-box">
-                    <div class="title">建立新任務</div>
+                    <div class="title">
+                        <span>建立新任務</span>
+                        <el-popover :width="700" trigger="click">
+                            <template #reference>
+                                <img class="information" src="@/assets/images/Icon/information.svg" alt="close">
+                            </template>
+                            <div class="container">
+                                <ol>
+                                    <li class="list-item">
+                                        請點選畫面最上排的「我的任務」。
+                                    </li>
+                                    <li class="list-item">
+                                        進到「我的任務」畫面後，請點選右側的「建立新任務」。
+                                    </li>
+                                    <li class="list-item">
+                                        請點選畫面最上排的「我的任務」。
+                                        <ul class="sub-list">
+                                            <li class="sub-list-item">任務名稱：可輸入要帶領的班級名稱，方便自己辨識，例如：一年三班。</li>
+                                            <li class="sub-list-item">選擇劇本：選擇欲使用的劇本，共有 4 篇可選，各有不同的帶領天數。</li>
+                                            <li class="sub-list-item">學習對象：選擇帶領的對象年齡層，此資料將作為阿普蛙後台統計使用。</li>
+                                            <li class="sub-list-item">預期參與組數：建議輸入預計分成的組數。</li>
+                                            <li class="sub-list-item">結束日期：輸入此劇本預計帶領完畢的日期，建議可以多抓幾天，避免影片 QR Code 失效。</li>
+                                            <li class="sub-list-item">點選「確認」鍵。</li>
+                                        </ul>
+                                    </li>
+                                    <li class="list-item">
+                                        列表上會出現你所建立的任務，帶領該班級時，可點選右方的「查看」鍵。
+                                    </li>
+                                    <li class="list-item">
+                                        點選「查看」鍵後，下拉即有每天的操作步驟，並可播放影片、輸入各組答案，以及下載各種教學所需的檔案。
+                                    </li>
+                                    <li class="list-item">
+                                        點選「我的任務」即可回到任務列表。每個任務亦可點選右方畫筆及垃圾桶圖示，前者可修改任務大綱，後者可刪除任務。
+                                    </li>
+                                    <li class="list-item">
+                                        若操作上有任何疑問，歡迎於上班時間來信或來電阿普蛙工作室。
+                                    </li>
+                                </ol>
+                            </div>
+                        </el-popover>
+
+                    </div>
                     <div class="item-title">*任務名稱</div>
                     <div><input v-model="addData.taskName" class="input" placeholder="請輸入文字" type="text"></div>
                     <div class="item-title">*選擇劇本</div>
@@ -403,6 +444,30 @@ async function deleteCurrentData() {
 @import '~/assets/styles/manage.scss';
 @import '~/assets/styles/table.scss';
 
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+ol {
+    counter-reset: item;
+}
+
+.sub-list-item::before {
+    content: "●";
+}
+
+.sub-list {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+
+.information {
+    cursor: pointer;
+    margin-left: 15px;
+}
 
 .manage-center {
     height: 50vh;
@@ -427,4 +492,5 @@ async function deleteCurrentData() {
         cursor: pointer;
     }
 
-}</style>
+}
+</style>
