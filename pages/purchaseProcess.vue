@@ -48,11 +48,11 @@
                     </div>
                 </div>
                 <div class="right">
-                    <div class="order-box">
+                    <div v-for="item of productDataList" class="order-box">
                         <div class="title">訂單資訊</div>
                         <div class="item" style="margin-bottom:8px;">
                             <div class="item-name">註冊碼售價</div>
-                            <div class="price">$1,350</div>
+                            <div class="price">${{item.price}}</div>
                         </div>
                         <div class="item">
                             <div class="item-name">購買份數</div>
@@ -61,7 +61,7 @@
                         <div class="gap"></div>
                         <div class="total">
                             <div class="item-name">訂單總額</div>
-                            <div class="price">{{payData.quantity * 1350}}</div>
+                            <div class="price">{{payData.quantity * item.price}}</div>
                         </div>
                     </div>
                     <div class="btn-box">
