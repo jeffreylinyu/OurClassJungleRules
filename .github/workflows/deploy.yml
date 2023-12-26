@@ -38,23 +38,6 @@ jobs:
       # Docker 相關步驟
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
-<<<<<<< HEAD
-        with:
-          context: .
-          push: true
-          platforms: linux/amd64,linux/arm64
-          tags: aibolee/ourclass:latest
-
-      # # 遠端 VM 部署步驟
-      # - name: SSH 到遠端 VM
-      #   uses: appleboy/ssh-action@v0.1.4
-      #   with:
-      #     host: ${{ secrets.REMOTE_VM_HOST }}
-      #     username: ${{ secrets.REMOTE_VM_USERNAME }}
-      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     script: |
-      #       sh /home/liqingbao/deploy_front.sh
-=======
         with:
           context: .
           push: true
@@ -70,4 +53,3 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             sh /home/liqingbao/deploy_front.sh
->>>>>>> main
