@@ -266,9 +266,13 @@
                         <div class="mission-body-row3">
                             <div class="mission-body-row4">
                                 <div class="mission-body-head3">額外資訊</div>
-                                <div v-if="currentDetail.information" @click="downloadFile(currentDetail.bulletin)">
+                                <a v-if="currentDetail.information" target="_blank" :href="currentDetail.information"
+                                    download="sheet">
                                     <img class="mission-body-icon" src="~assets/images/Icon/download.svg" alt="">
-                                </div>
+                                </a>
+                                <!-- <div v-if="currentDetail.information" @click="downloadFile(currentDetail.bulletin)">
+                                    <img class="mission-body-icon" src="~assets/images/Icon/download.svg" alt="">
+                                </div> -->
                             </div>
                             <div class="mission-body-row4">
                                 <div class="mission-body-head3">本日影片 QR code </div>
