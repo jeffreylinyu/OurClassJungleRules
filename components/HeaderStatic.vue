@@ -50,6 +50,9 @@
             <nuxt-link to="/mission/list">
               <div class="subitem">任務總覽</div>
             </nuxt-link>
+            <nuxt-link to="/manage/product">
+              <div class="subitem">商品管理</div>
+            </nuxt-link>
             <nuxt-link to="/manage/script">
               <div class="subitem">劇本教材管理</div>
             </nuxt-link>
@@ -133,6 +136,9 @@
           </nuxt-link>
           <nuxt-link to="/mission/list" class="link" :class="{ 'link-action': routeName == 'mission-list' }">
             任務總覽
+          </nuxt-link>
+          <nuxt-link to="/manage/product" class="link" :class="{ 'link-action': routeName == 'manage-product' }">
+            商品管理
           </nuxt-link>
           <nuxt-link to="/manage/script" class="link" :class="{ 'link-action': routeName == 'manage-script' }">
             劇本教材管理
