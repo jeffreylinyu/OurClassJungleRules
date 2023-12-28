@@ -43,7 +43,7 @@
                             <div><input v-model="payData.quantity" class="input" min="1"
                                     style="margin-bottom: 10px; width:100px" type="number">
                             </div>
-
+                            <div class="item-title">付款方式</div>
                         </div>
                     </div>
                 </div>
@@ -51,8 +51,8 @@
                     <div v-for="item of productDataList" class="order-box">
                         <div class="title">訂單資訊</div>
                         <div class="item" style="margin-bottom:8px;">
-                            <div class="item-name">註冊碼售價</div>
-                            <div class="price">${{item.price}}</div>
+                            <div class="item-name">購買售價</div>
+                            <div class="price">${{ currentPeriod }}</div>
                         </div>
                         <div class="item">
                             <div class="item-name">購買份數</div>
@@ -61,7 +61,7 @@
                         <div class="gap"></div>
                         <div class="total">
                             <div class="item-name">訂單總額</div>
-                            <div class="price">{{payData.quantity * item.price}}</div>
+                            <div class="price">{{payData.quantity * currentPeriod}}</div>
                         </div>
                     </div>
                     <div class="btn-box">
@@ -94,10 +94,12 @@ import { order,getProducts } from "~/api/cash";
 import { ElMessage } from 'element-plus'
 
 const productDataList = reactive([])
+const currentPeriod = ref(0)
 const init = async () => {
     let products = await getProducts()
     let productList = JSON.parse(JSON.stringify(products.data.value.data.list)) 
     productDataList.push(...productList)
+    currentPeriod.value = productDataList[0].price
     
 }
 
