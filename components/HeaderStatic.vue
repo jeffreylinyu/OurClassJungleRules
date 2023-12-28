@@ -185,11 +185,7 @@ import { storeToRefs } from 'pinia'
 import { getScriptByNoToken as getScript } from "~/api/script";
 
 let auth = useAuthStore()
-
-
 const { isLogin, permissions, checkLicense } = storeToRefs(auth)
-
-
 
 const handleSignOut = () => {
   useAuthStore().signOut()
@@ -205,8 +201,6 @@ const setAllScript = async () => {
 }
 
 nextTick(() => {
-  console.log(isLogin)
-console.log(permissions)
   setAllScript()
 })
 let routeName = ref("")
