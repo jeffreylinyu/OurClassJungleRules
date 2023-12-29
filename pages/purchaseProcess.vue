@@ -51,7 +51,7 @@
                     <div v-for="item of productDataList" class="order-box">
                         <div class="title">訂單資訊</div>
                         <div class="item" style="margin-bottom:8px;">
-                            <div class="item-name">購買售價</div>
+                            <div class="item-name">註冊碼售價</div>
                             <div class="price">${{ currentPeriod }}</div>
                         </div>
                         <div class="item">
