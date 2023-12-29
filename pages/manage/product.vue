@@ -5,7 +5,7 @@
                 <div class="manage-head">商品管理</div>
                 <div class="manage-row">
                     <!-- <div class="manage-num">項目數量：10</div> -->
-                    <div @click="isShowAdd = true" class="manage-create">+ 新增商品</div>
+                    <!-- <div @click="isShowAdd = true" class="manage-create">+ 新增商品</div> -->
                 </div>
 
             </div>
