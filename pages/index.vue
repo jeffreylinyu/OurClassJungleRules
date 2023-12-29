@@ -3,7 +3,7 @@
     <div class="box">
       <div class="top-block">
         <div class="text-box">
-          <div class="text1">共創友善校園：<br>人際衝突 X 預防霸凌，啟動學生正面力量！</div>
+          <div class="text1">共創友善校園：<br>人際衝突&nbsp; X &nbsp;預防霸凌，啟動學生正面力量！</div>
           <div class="text2">打造專為國小校園設計的全新教材！
 這套教學教材包含四個引人入勝的劇本，每位角色背後都隱藏著不同的需求。透過生動的故事，學生們將在每段劇情中做出關鍵選擇，推進劇情發展，而他們的決定將共同決定故事的最終結局！
 為孩子們打造一個充滿想像力和互動的學習環境，啟發他們的思考，培養問題解決的能力。
@@ -29,8 +29,7 @@
           <div>
             <div class="text-box">
               <div class="text3">
-                近幾年教育現場不斷在推動「反霸凌」，但是缺乏好操作的教材供老師使用，老師們僅能依賴自己的經驗，卻經常心有餘而力不足，因此阿普蛙設計了這套教材，我們期待從根本來解決問題，學生們往往是因為他們想要滿足自身需求，卻使用的錯誤的方式來滿足，而造成對他人的傷害而不自知。
-              </div>
+                近幾年教育現場不斷在推動「反霸凌」，但是缺乏好操作的教材供老師使用，老師們僅能依賴自己的經驗，卻經常心有餘而力不足，因此阿普蛙設計了這套教材，我們期待從根本來解決問題，學生們往往是因為他們想要滿足自身需求，卻使用的錯誤的方式來滿足，而造成對他人的傷害而不自知。 </div>
             </div>
           </div>
         </div>
@@ -42,7 +41,7 @@
     <div class="third-block">
       <div class="content-box">
         <div class="title">關於教材</div>
-        <div class="text">我們已將教學所需要使用的素材全部放在網站上，包含 26 部影片、各個劇本所要用的教學簡報、學習單等，讓老師們準備課程更加便利！<br>
+        <div class="text">我們已將教學所需要使用的素材全部放在網站上，包含 &nbsp;26&nbsp; 部影片、各個劇本所要用的教學簡報、學習單等，讓老師們準備課程更加便利！<br>
 透過這個課程，孩子將會認識人的『需求』，而且我們不只是告訴他們方法，還會引導他們討論如何『適當』地滿足這些需求。我們的目標是培養孩子自己發現事物、關心別人的能力。
 </div>
         <div class="item-box">
@@ -57,7 +56,7 @@
           </div>
 
         </div>
-        <div class="content">每天發生一段故事，學生回家可以和家長一起討論，隔天回到學校，再和同學們一起選擇故事發展。每個選擇都有分數，影響結局唷！最後，由老師帶領大家一起聊聊劇情結局。
+        <div class="content">每天發生一段故事，學生回家可以和家長一起討論，隔天回到學校，再和同學們一起決定故事發展。每個選擇都有分數，影響結局唷！最後，由老師帶領大家一起聊聊劇情結局。
 這樣的學習方式不僅有趣，讓孩子在遊戲中學到更多！
 </div>
       </div>
@@ -153,6 +152,7 @@ nextTick(() => {
       justify-content: flex-end;
       align-items: flex-end;
       padding-bottom: 21px;
+      align-items: flex-start;
 
       @include respond-to('phone') {
         flex-direction: column;
@@ -161,16 +161,17 @@ nextTick(() => {
       }
 
       .text-box {
+        margin-top: 50px;
         margin-right: 7%;
-        width: 920px;
+        width: 40%;
         @include respond-to('phone') {
           margin: 40px 0 0 20px;
-          width: auto;
+          width: 40%;
         }
 
         @include respond-to('pad') {
-          margin: 0px;
-          width: auto;
+          margin: 50px 0 0 0;
+          width: 40%;
         }
 
         .text1 {
@@ -192,7 +193,7 @@ nextTick(() => {
           font-weight: 400;
           font-size: 24px;
           color: $text2;
-          padding-bottom: 230px;
+          // padding-bottom: 230px;
           letter-spacing: 0.5px;
 
           @include respond-to('phone') {
@@ -489,6 +490,10 @@ nextTick(() => {
               color: $text1;
               margin-top: 24px;
               letter-spacing: 0.5px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              width: 85%;
+              overflow: hidden;
             }
 
             &-content {
