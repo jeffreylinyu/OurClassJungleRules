@@ -43,7 +43,6 @@
                             <div><input v-model="payData.quantity" class="input" min="1"
                                     style="margin-bottom: 10px; width:100px" type="number">
                             </div>
-                            <div class="item-title">付款方式</div>
                         </div>
                     </div>
                 </div>
