@@ -15,3 +15,7 @@ export const script = async () => {
 export const ending = async () => {
     return await useHttp.get(`${categoryBaseUrl}/script-ending`);
 };
+
+export const scriptDistribution = async () => {
+    return await useHttp.get(`${categoryBaseUrl}/script-distribution`);
+};

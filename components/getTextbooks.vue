@@ -36,12 +36,12 @@ const closeDialog = () => {
       .text {
         margin-top: 80px;
         font-weight: 400;
-        font-size: 24px;
+        font-size: 22px;
         color: $secondary2;
         letter-spacing: 0.5px;
         display: flex;
         justify-content: center;
-        text-align: center;
+        text-align: start;
         width: 928px;
 
         @include respond-to('phone') {

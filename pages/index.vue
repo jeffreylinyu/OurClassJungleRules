@@ -56,8 +56,8 @@
           </div>
 
         </div>
-        <div class="content">每天發生一段故事，學生回家可以和家長一起討論，隔天回到學校，再和同學們一起決定故事發展。每個選擇都有分數，影響結局唷！最後，由老師帶領大家一起聊聊劇情結局。
-這樣的學習方式不僅有趣，讓孩子在遊戲中學到更多！
+        <div class="content">每天發生一段故事，學生回家可以和家長一起討論，隔天回到學校，再和同學們一起決定故事如何發展。每個選擇都會影響結局唷！最後，由老師帶領大家一起聊聊劇情結局。這樣的學習方式不僅有趣，也能讓孩子在遊戲中學到更多！
+
 </div>
       </div>
     </div>
@@ -457,7 +457,7 @@ nextTick(() => {
             min-width: 279px;
             max-width: 279px;
             margin-bottom: 15px;
-            height: 327px;
+            height: 350px;
             background: $secondary2;
             border: 3px solid $border4;
             border-radius: 32px;
@@ -490,10 +490,10 @@ nextTick(() => {
               color: $text1;
               margin-top: 24px;
               letter-spacing: 0.5px;
-              white-space: nowrap;
-              text-overflow: ellipsis;
+              height: 45px;
+              text-align: center;
               width: 85%;
-              overflow: hidden;
+              
             }
 
             &-content {
