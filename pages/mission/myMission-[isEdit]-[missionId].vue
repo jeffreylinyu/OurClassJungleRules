@@ -432,13 +432,13 @@
                                 <img @click="handelDownloadPDF()" class="mission-body-icon"
                                     src="~assets/images/Icon/download.svg" alt="">
                             </div>
-                            <!-- <div class="mission-body-row4">
-                                <div class="mission-body-head3">教學簡報</div>
-                                <a v-if="currentDetail.endingBulletin" target="_blank" :href="currentDetail.endingBulletin"
-                                    download="sheet">
+                            <div class="mission-body-row4">
+                                <div class="mission-body-head3">結局日影片 QR code </div>
+                                <div 
+                                @click="qrDownload(currentDetail[`endingMovie${quadrant}`], `第${quadrant}日劇情`)">
                                     <img class="mission-body-icon" src="~assets/images/Icon/download.svg" alt="">
-                                </a>
-                            </div> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
