@@ -1387,6 +1387,7 @@ nextTick(() => {
             font-size: 14px;
             color: #666666;
             white-space: pre-line;
+            flex: 1;
         }
 
         &-line {

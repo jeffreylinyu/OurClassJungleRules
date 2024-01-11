@@ -36,7 +36,7 @@ body.value = ''
 const submit = () => {
     let link = document.createElement("a");
     let submitBody = body.value; 
-    if(checkbox){
+    if(checkbox.value){
         submitBody += " 我同意接收營銷和宣傳材料"
     }
     let email = "wasupstudio@gmail.com";
