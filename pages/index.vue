@@ -177,12 +177,12 @@ nextTick(() => {
 
         @include respond-to('phone') {
           margin: 40px 0 0 20px;
-          width: 40%;
+          width: 90%;
         }
 
         @include respond-to('pad') {
           margin: 50px 0 0 0;
-          width: 40%;
+          width: 90%;
         }
 
         .text1 {
