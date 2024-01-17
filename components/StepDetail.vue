@@ -200,44 +200,44 @@
                 <div class="step-day-net">
                     <div class="step-day-row">
                         <div class="step-day-title3">結局一 (鴞老師) 影片</div>
-                        <span v-if="endingData.endingMovie1">{{ getFileName(endingData.endingMovie1) }}</span>
+                        <span v-if="endingData['endingMovie-1']">{{ getFileName(endingData['endingMovie-1']) }}</span>
                         <div class="step-day-btn">
-                            <img v-if="endingData.endingMovie1" class="step-day-icon"
+                            <img v-if="endingData['endingMovie-1']" class="step-day-icon"
                                 src="~/assets/images/Icon/available.svg" alt="available">
-                            <div @click="endingChooseFile('endingMovie1')" class="step-day-upload">上傳</div>
+                            <div @click="endingChooseFile('endingMovie-1')" class="step-day-upload">上傳</div>
                             <input type="file" id="endingMovie1-input" style="display: none;" @change="endingChangeFile"
                                 data-ref="endingMovie1">
                         </div>
                     </div>
                     <div class="step-day-row">
                         <div class="step-day-title3">結局二 (鴿老師) 影片</div>
-                        <span v-if="endingData.endingMovie2">{{ getFileName(endingData.endingMovie2) }}</span>
+                        <span v-if="endingData['endingMovie-2']">{{ getFileName(endingData['endingMovie-2']) }}</span>
                         <div class="step-day-btn">
-                            <img v-if="endingData.endingMovie2" class="step-day-icon"
+                            <img v-if="endingData['endingMovie-2']" class="step-day-icon"
                                 src="~/assets/images/Icon/available.svg" alt="available">
-                            <div @click="endingChooseFile('endingMovie2')" class="step-day-upload">上傳</div>
+                            <div @click="endingChooseFile('endingMovie-2')" class="step-day-upload">上傳</div>
                             <input type="file" id="endingMovie2-input" style="display: none;" @change="endingChangeFile"
                                 data-ref="endingMovie2">
                         </div>
                     </div>
                     <div class="step-day-row">
                         <div class="step-day-title3">結局三 (鴉老師) 影片</div>
-                        <span v-if="endingData.endingMovie3">{{ getFileName(endingData.endingMovie3) }}</span>
+                        <span v-if="endingData['endingMovie-3']">{{ getFileName(endingData['endingMovie-3']) }}</span>
                         <div class="step-day-btn">
-                            <img v-if="endingData.endingMovie3" class="step-day-icon"
+                            <img v-if="endingData['endingMovie-3']" class="step-day-icon"
                                 src="~/assets/images/Icon/available.svg" alt="available">
-                            <div @click="endingChooseFile('endingMovie3')" class="step-day-upload">上傳</div>
+                            <div @click="endingChooseFile('endingMovie-3')" class="step-day-upload">上傳</div>
                             <input type="file" id="endingMovie3-input" style="display: none;" @change="endingChangeFile"
                                 data-ref="endingMovie3">
                         </div>
                     </div>
                     <div class="step-day-row">
                         <div class="step-day-title3">結局四 (鷹老師) 影片</div>
-                        <span v-if="endingData.endingMovie4">{{ getFileName(endingData.endingMovie4) }}</span>
+                        <span v-if="endingData['endingMovie-4']">{{ getFileName(endingData['endingMovie-4']) }}</span>
                         <div class="step-day-btn">
-                            <img v-if="endingData.endingMovie4" class="step-day-icon"
+                            <img v-if="endingData['endingMovie-4']" class="step-day-icon"
                                 src="~/assets/images/Icon/available.svg" alt="available">
-                            <div @click="endingChooseFile('endingMovie4')" class="step-day-upload">上傳</div>
+                            <div @click="endingChooseFile('endingMovie-4')" class="step-day-upload">上傳</div>
                             <input type="file" id="endingMovie4-input" style="display: none;" @change="endingChangeFile"
                                 data-ref="endingMovie4">
                         </div>
@@ -533,10 +533,10 @@ const endingData = reactive({
     "relationThree": 0,
     "relationTwo": 0,
     "scriptId": 0,
-    "endingMovie1": null,
-    "endingMovie2": null,
-    "endingMovie3": null,
-    "endingMovie4": null,
+    "endingMovie-1": null,
+    "endingMovie-2": null,
+    "endingMovie-3": null,
+    "endingMovie-4": null,
     "endingSheet": null,
     "endingBulletin": null
 })
