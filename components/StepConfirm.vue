@@ -199,29 +199,29 @@
                     <div class="step-day-net">
                         <div class="step-day-row">
                             <div class="step-day-title">結局一 (鴞老師) 影片</div>
-                            <span v-if="props.endingData.endingMovie1">{{ getFileName(props.endingData.endingMovie1) }}</span>
-                            <img v-if="props.endingData.endingMovie1" class="step-day-icon" src="~/assets/images/Icon/available.svg"
+                            <span v-if="props.endingData['endingMovie-1']">{{ getFileName(props.endingData['endingMovie-1']) }}</span>
+                            <img v-if="props.endingData['endingMovie-1']" class="step-day-icon" src="~/assets/images/Icon/available.svg"
                                 alt="available">
                         </div>
                         <div class="step-day-line"></div>
                         <div class="step-day-row">
                             <div class="step-day-title">結局二 (鴿老師) 影片</div>
-                            <span v-if="props.endingData.endingMovie2">{{ getFileName(props.endingData.endingMovie2) }}</span>
-                            <img v-if="props.endingData.endingMovie2" class="step-day-icon" src="~/assets/images/Icon/available.svg"
+                            <span v-if="props.endingData['endingMovie-2']">{{ getFileName(props.endingData['endingMovie-2']) }}</span>
+                            <img v-if="props.endingData['endingMovie-2']" class="step-day-icon" src="~/assets/images/Icon/available.svg"
                                 alt="available">
                         </div>
                         <div class="step-day-line"></div>
                         <div class="step-day-row">
                             <div class="step-day-title">結局三 (鴉老師) 影片</div>
-                            <span v-if="props.endingData.endingMovie3">{{ getFileName(props.endingData.endingMovie3) }}</span>
-                            <img v-if="props.endingData.endingMovie3" class="step-day-icon" src="~/assets/images/Icon/available.svg"
+                            <span v-if="props.endingData['endingMovie-3']">{{ getFileName(props.endingData['endingMovie-3']) }}</span>
+                            <img v-if="props.endingData['endingMovie-3']" class="step-day-icon" src="~/assets/images/Icon/available.svg"
                                 alt="available">
                         </div>
                         <div class="step-day-line"></div>
                         <div class="step-day-row">
                             <div class="step-day-title">結局四 (鷹老師) 影片</div>
-                            <span v-if="props.endingData.endingMovie4">{{ getFileName(props.endingData.endingMovie4) }}</span>
-                            <img v-if="props.endingData.endingMovie4" class="step-day-icon" src="~/assets/images/Icon/available.svg"
+                            <span v-if="props.endingData['endingMovie-4']">{{ getFileName(props.endingData['endingMovie-4']) }}</span>
+                            <img v-if="props.endingData['endingMovie-4']" class="step-day-icon" src="~/assets/images/Icon/available.svg"
                                 alt="available">
                         </div>
                     </div>

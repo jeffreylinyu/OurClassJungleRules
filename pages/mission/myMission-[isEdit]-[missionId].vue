@@ -333,8 +333,8 @@
                         :style="`background: no-repeat center url(${scriptData.imgUrl})`">
                         <div v-if="!isVideoPlay" class="mission-body-video">
                             <div class="mission-body-video-head">{{ quadrantOption[quadrant] }}</div>
-                            <div v-if="currentDetail[`endingMovie${quadrant}`]"
-                                @click="videoPlay(currentDetail[`endingMovie${quadrant}`])" class="mission-body-video-play">
+                            <div v-if="currentDetail[`endingMovie-${quadrant}`]"
+                                @click="videoPlay(currentDetail[`endingMovie-${quadrant}`])" class="mission-body-video-play">
                                 <img class="mission-body-video-img" src="~assets/images/Icon/play.svg" alt="">
                                 <div>播放影片</div>
                             </div>
@@ -343,7 +343,7 @@
                                 <img class="mission-body-video-img" src="~assets/images/Icon/detail-ccc.svg" alt="">
                                 <div>閱讀文字版</div>
                             </div>
-                            <div @click="qrDownload(currentDetail[`endingMovie${quadrant}`], `第${quadrant}日劇情`)"
+                            <div @click="qrDownload(currentDetail[`endingMovie-${quadrant}`], `第${quadrant}日劇情`)"
                                 class="mission-body-video-text">
                                 <img class="mission-body-video-img" src="~assets/images/Icon/download-ccc.svg" alt="">
                                 <div>影片 QR code 下載</div>
@@ -362,13 +362,13 @@
                             <div class="mission-body-row4">
                                 <div class="mission-body-head3">{{ scriptData.title }} 結局一 (鴞老師)</div>
                                 <div style="display: flex;">
-                                    <img v-if="currentDetail.endingMovie1" @click="videoPlay(currentDetail.endingMovie1)"
+                                    <img v-if="currentDetail['endingMovie-1']" @click="videoPlay(currentDetail['endingMovie-1'])"
                                         class="mission-body-bgIcon" style="margin-right: 12px;"
                                         src="~assets/images/Icon/play.svg" alt="">
                                     <img @click="openContentPopup(currentDetail.endingOne)" class="mission-body-icon"
                                         style="margin-right: 12px;" src="~assets/images/Icon/detail.svg" alt="">
-                                    <img v-if="currentDetail.endingMovie1"
-                                        @click="qrDownload(currentDetail.endingMovie1, `結局日結局一`)" class="mission-body-icon"
+                                    <img v-if="currentDetail['endingMovie-1']"
+                                        @click="qrDownload(currentDetail['endingMovie-1'], `結局日結局一`)" class="mission-body-icon"
                                         src="~assets/images/Icon/download.svg" alt="">
                                 </div>
                                 <!-- <a v-if="currentDetail.sheet" :href="currentDetail.sheet" download="sheet">
@@ -378,13 +378,13 @@
                             <div class="mission-body-row4">
                                 <div class="mission-body-head3">{{ scriptData.title }} 結局二 (鴿老師)</div>
                                 <div style="display: flex;">
-                                    <img v-if="currentDetail.endingMovie2" @click="videoPlay(currentDetail.endingMovie2)"
+                                    <img v-if="currentDetail['endingMovie-2']" @click="videoPlay(currentDetail['endingMovie-2'])"
                                         class="mission-body-bgIcon" style="margin-right: 12px;"
                                         src="~assets/images/Icon/play.svg" alt="">
                                     <img @click="openContentPopup(currentDetail.endingTwo)" class="mission-body-icon"
                                         style="margin-right: 12px;" src="~assets/images/Icon/detail.svg" alt="">
-                                    <img v-if="currentDetail.endingMovie2"
-                                        @click="qrDownload(currentDetail.endingMovie2, `結局日結局二`)" class="mission-body-icon"
+                                    <img v-if="currentDetail['endingMovie-2']"
+                                        @click="qrDownload(currentDetail['endingMovie-2'], `結局日結局二`)" class="mission-body-icon"
                                         src="~assets/images/Icon/download.svg" alt="">
                                 </div>
                             </div>
@@ -394,26 +394,26 @@
                             <div class="mission-body-row4">
                                 <div class="mission-body-head3">{{ scriptData.title }} 結局三 (鴉老師)</div>
                                 <div style="display: flex;">
-                                    <img v-if="currentDetail.endingMovie3" @click="videoPlay(currentDetail.endingMovie3)"
+                                    <img v-if="currentDetail['endingMovie-3']" @click="videoPlay(currentDetail['endingMovie-3'])"
                                         class="mission-body-bgIcon" style="margin-right: 12px;"
                                         src="~assets/images/Icon/play.svg" alt="">
                                     <img @click="openContentPopup(currentDetail.endingThree)" class="mission-body-icon"
                                         style="margin-right: 12px;" src="~assets/images/Icon/detail.svg" alt="">
-                                    <img v-if="currentDetail.endingMovie3"
-                                        @click="qrDownload(currentDetail.endingMovie3, `結局日結局三`)" class="mission-body-icon"
+                                    <img v-if="currentDetail['endingMovie-3']"
+                                        @click="qrDownload(currentDetail['endingMovie-3'], `結局日結局三`)" class="mission-body-icon"
                                         src="~assets/images/Icon/download.svg" alt="">
                                 </div>
                             </div>
                             <div class="mission-body-row4">
                                 <div class="mission-body-head3">{{ scriptData.title }} 結局四 (鷹老師)</div>
                                 <div style="display: flex;">
-                                    <img v-if="currentDetail.endingMovie4" @click="videoPlay(currentDetail.endingMovie4)"
+                                    <img v-if="currentDetail['endingMovie-4']" @click="videoPlay(currentDetail['endingMovie-4'])"
                                         class="mission-body-bgIcon" style="margin-right: 12px;"
                                         src="~assets/images/Icon/play.svg" alt="">
                                     <img @click="openContentPopup(currentDetail.endingFour)" class="mission-body-icon"
                                         style="margin-right: 12px;" src="~assets/images/Icon/detail.svg" alt="">
-                                    <img v-if="currentDetail.endingMovie4"
-                                        @click="qrDownload(currentDetail.endingMovie4, `結局日結局四`)" class="mission-body-icon"
+                                    <img v-if="currentDetail['endingMovie-4']"
+                                        @click="qrDownload(currentDetail['endingMovie-4'], `結局日結局四`)" class="mission-body-icon"
                                         src="~assets/images/Icon/download.svg" alt="">
                                 </div>
                             </div>
@@ -435,7 +435,7 @@
                             <div class="mission-body-row4">
                                 <div class="mission-body-head3">結局日影片 QR code </div>
                                 <div 
-                                @click="qrDownload(currentDetail[`endingMovie${quadrant}`], `第${quadrant}日劇情`)">
+                                @click="qrDownload(currentDetail[`endingMovie-${quadrant}`], `第${quadrant}日劇情`)">
                                     <img class="mission-body-icon" src="~assets/images/Icon/download.svg" alt="">
                                 </div>
                             </div>
@@ -772,10 +772,10 @@ const setScriptData = async () => {
 
     });
 
-    scriptData.scriptEndingDTO.endingMovie1 = getFileUrl(scriptData.mediaDTO, `endingMovie1`)
-    scriptData.scriptEndingDTO.endingMovie2 = getFileUrl(scriptData.mediaDTO, `endingMovie2`)
-    scriptData.scriptEndingDTO.endingMovie3 = getFileUrl(scriptData.mediaDTO, `endingMovie3`)
-    scriptData.scriptEndingDTO.endingMovie4 = getFileUrl(scriptData.mediaDTO, `endingMovie4`)
+    scriptData.scriptEndingDTO['endingMovie-1'] = getFileUrl(scriptData.mediaDTO, `endingMovie-1`)
+    scriptData.scriptEndingDTO['endingMovie-2'] = getFileUrl(scriptData.mediaDTO, `endingMovie-2`)
+    scriptData.scriptEndingDTO['endingMovie-3'] = getFileUrl(scriptData.mediaDTO, `endingMovie-3`)
+    scriptData.scriptEndingDTO['endingMovie-4'] = getFileUrl(scriptData.mediaDTO, `endingMovie-4`)
     scriptData.scriptEndingDTO.endingSheet = getFileUrl(scriptData.mediaDTO, `endingSheet`)
     scriptData.scriptEndingDTO.endingBulletin = getFileUrl(scriptData.mediaDTO, `endingBulletin`)
     nextTick(() => {
