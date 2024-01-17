@@ -343,7 +343,7 @@
                                 <img class="mission-body-video-img" src="~assets/images/Icon/detail-ccc.svg" alt="">
                                 <div>閱讀文字版</div>
                             </div>
-                            <div @click="qrDownload(currentDetail[`endingMovie-${quadrant}`], `第${quadrant}日劇情`)"
+                            <div @click="qrDownload(currentDetail[`endingMovie-${quadrant}`], `結局日劇情`)"
                                 class="mission-body-video-text">
                                 <img class="mission-body-video-img" src="~assets/images/Icon/download-ccc.svg" alt="">
                                 <div>影片 QR code 下載</div>
@@ -435,7 +435,7 @@
                             <div class="mission-body-row4">
                                 <div class="mission-body-head3">結局日影片 QR code </div>
                                 <div 
-                                @click="qrDownload(currentDetail[`endingMovie-${quadrant}`], `第${quadrant}日劇情`)">
+                                @click="qrDownload(currentDetail[`endingMovie-${quadrant}`], `結局日劇情`)">
                                     <img class="mission-body-icon" src="~assets/images/Icon/download.svg" alt="">
                                 </div>
                             </div>
@@ -476,16 +476,6 @@
                     <div @click.stop class="block-box">
                         <div class="title">劇情內容</div>
                         <div class="text">{{ showContent }}</div>
-                        <!-- <div class="text">砰!一聲巨大的聲響，蓋過下課時教室裡嘈雜的人聲，同學們紛紛轉過頭去尋找聲音的來源。</div>
-                        <div class="text">「好痛......」只見嬌小瘦弱的林曉兔跌坐在地上，正撫摸著自己瘀青的膝蓋，一旁是倒掉的課桌椅，看來就是她造成了剛剛那聲巨響。</div>
-                        <div class="text">一個龐大的身影突然籠罩著林曉兔，她抬起頭，臉上浮現了害怕的表情。</div>
-                        <div class="text">黑影的主人，是身型壯碩的張萌虎，正惡狠狠地瞪著林曉兔，，右腳也不斷地抖著。</div>
-                        <div class="text">張萌虎說:「妳很會跑嘛，再跑給我看啊!我看妳現在往哪裡跑?」</div>
-                        <div class="text">說完還用力地踹了倒掉的桌子一腳，又發出「砰!」的一聲，教室裡的人們都嚇了一大跳。</div>
-                        <div class="text">「等、等一下，」林曉兔微微顫抖地說:「我剛剛只是在開玩笑，我不是故意——」</div>
-                        <div class="text">砰!不等林曉兔說玩，張萌虎又踹倒了旁邊一張椅子，林曉兔發出一聲驚恐的尖叫。</div>
-                        <div class="text">「開玩笑?」張萌虎咬牙切齒地說著:「所以你是在笑我?妳覺得很好玩、很好笑囉?」</div>
-                        <div class="text">林曉兔嚇得低下頭，張萌虎怒吼一聲，又掀翻了一張桌子。同學們你看我、我看你，但一時沒有任何人敢有動作......</div> -->
                     </div>
                 </div>
             </div>
@@ -586,24 +576,6 @@ const qrDownload = (url, fileName) => {
         .catch(err => {
             console.error(err)
         })
-}
-
-const downloadFile = (url) => {
-    fetch('https://storage.cloud.google.com/wasupstudio-bucket/1692752760483.png', {
-        mode: 'no-cors', // 必要设置，解决跨域
-    }).then(async res => {
-        let blob = await res.blob()
-        return blob
-    }).then((blob) => {
-        const a = document.createElement('a')
-        a.style.display = 'none'
-        a.href = URL.createObjectURL(blob)
-        a.download = 'filename'
-        a.target = '_blank'
-        document.body.appendChild(a)
-        a.click()
-        document.body.removeChild(a)
-    })
 }
 
 const isAllScoreFill = ref(false)
