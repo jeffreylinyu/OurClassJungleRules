@@ -173,29 +173,29 @@
                         <div class="step-day-net">
                             <div class="step-day-row">
                                 <div class="step-day-title">結局一 (鴞老師) 影片</div>
-                                <span v-if="judgeHasFile(`endingMovie1`)">{{ judgeHasFile(`endingMovie1`) }}</span>
-                                <img v-if="judgeHasFile(`endingMovie1`)" class="step-day-icon"
+                                <span v-if="judgeHasFile(`endingMovie-1`)">{{ judgeHasFile(`endingMovie-1`) }}</span>
+                                <img v-if="judgeHasFile(`endingMovie-1`)" class="step-day-icon"
                                     src="~/assets/images/Icon/available.svg" alt="available">
                             </div>
                             <div class="step-day-line"></div>
                             <div class="step-day-row">
                                 <div class="step-day-title">結局二 (鴿老師) 影片</div>
-                                <span v-if="judgeHasFile(`endingMovie2`)">{{ judgeHasFile(`endingMovie2`) }}</span>
-                                <img v-if="judgeHasFile(`endingMovie2`)" class="step-day-icon"
+                                <span v-if="judgeHasFile(`endingMovie-2`)">{{ judgeHasFile(`endingMovie-2`) }}</span>
+                                <img v-if="judgeHasFile(`endingMovie-2`)" class="step-day-icon"
                                     src="~/assets/images/Icon/available.svg" alt="available">
                             </div>
                             <div class="step-day-line"></div>
                             <div class="step-day-row">
                                 <div class="step-day-title">結局三 (鴉老師) 影片</div>
-                                <span v-if="judgeHasFile(`endingMovie3`)">{{ judgeHasFile(`endingMovie3`) }}</span>
-                                <img v-if="judgeHasFile(`endingMovie3`)" class="step-day-icon"
+                                <span v-if="judgeHasFile(`endingMovie-3`)">{{ judgeHasFile(`endingMovie-3`) }}</span>
+                                <img v-if="judgeHasFile(`endingMovie-3`)" class="step-day-icon"
                                     src="~/assets/images/Icon/available.svg" alt="available">
                             </div>
                             <div class="step-day-line"></div>
                             <div class="step-day-row">
                                 <div class="step-day-title">結局四 (鷹老師) 影片</div>
-                                <span v-if="judgeHasFile(`endingMovie4`)">{{ judgeHasFile(`endingMovie4`) }}</span>
-                                <img v-if="judgeHasFile(`endingMovie4`)" class="step-day-icon"
+                                <span v-if="judgeHasFile(`endingMovie-4`)">{{ judgeHasFile(`endingMovie-4`) }}</span>
+                                <img v-if="judgeHasFile(`endingMovie-4`)" class="step-day-icon"
                                     src="~/assets/images/Icon/available.svg" alt="available">
                             </div>
                         </div>
@@ -467,46 +467,46 @@
                     <div class="step-day-net">
                         <div class="step-day-row">
                             <div class="step-day-title3">結局一 (鴞老師) 影片</div>
-                            <span v-if="judgeHasFile(`endingMovie1`)">{{judgeHasFile(`endingMovie1`)}}</span>
+                            <span v-if="judgeHasFile(`endingMovie-1`)">{{judgeHasFile(`endingMovie-1`)}}</span>
                             <div class="m-flex">
-                                <img v-if="judgeHasFile(`endingMovie1`)" class="step-day-icon"
+                                <img v-if="judgeHasFile(`endingMovie-1`)" class="step-day-icon"
                                     src="~/assets/images/Icon/available.svg" alt="available">
-                                <div @click="chooseFile('endingMovie1', 'end')" class="step-day-upload">上傳</div>
-                                <input type="file" id="endingMovie1" style="display: none;" @change="changeFile"
-                                    data-period="end" data-ref="endingMovie1">
+                                <div @click="chooseFile('endingMovie-1', 'end')" class="step-day-upload">上傳</div>
+                                <input type="file" id="endingMovie-1" style="display: none;" @change="changeFile"
+                                    data-period="end" data-ref="endingMovie-1">
                             </div>
                         </div>
                         <div class="step-day-row">
                             <div class="step-day-title3">結局二 (鴿老師) 影片</div>
-                            <span v-if="judgeHasFile(`endingMovie2`)">{{judgeHasFile(`endingMovie2`)}}</span>
+                            <span v-if="judgeHasFile(`endingMovie-2`)">{{judgeHasFile(`endingMovie-2`)}}</span>
                             <div class="m-flex">
-                                <img v-if="judgeHasFile(`endingMovie2`)" class="step-day-icon"
+                                <img v-if="judgeHasFile(`endingMovie-2`)" class="step-day-icon"
                                     src="~/assets/images/Icon/available.svg" alt="available">
-                                <div @click="chooseFile('endingMovie2', 'end')" class="step-day-upload">上傳</div>
-                                <input type="file" id="endingMovie2" style="display: none;" @change="changeFile"
-                                    data-period="end" data-ref="endingMovie2">
+                                <div @click="chooseFile('endingMovie-2', 'end')" class="step-day-upload">上傳</div>
+                                <input type="file" id="endingMovie-2" style="display: none;" @change="changeFile"
+                                    data-period="end" data-ref="endingMovie-2">
                             </div>
                         </div>
                         <div class="step-day-row">
                             <div class="step-day-title3">結局三 (鴉老師) 影片</div>
-                            <span v-if="judgeHasFile(`endingMovie3`)">{{judgeHasFile(`endingMovie3`)}}</span>
+                            <span v-if="judgeHasFile(`endingMovie-3`)">{{judgeHasFile(`endingMovie-3`)}}</span>
                             <div class="m-flex">
-                                <img v-if="judgeHasFile(`endingMovie3`)" class="step-day-icon"
+                                <img v-if="judgeHasFile(`endingMovie-3`)" class="step-day-icon"
                                     src="~/assets/images/Icon/available.svg" alt="available">
-                                <div @click="chooseFile('endingMovie3', 'end')" class="step-day-upload">上傳</div>
-                                <input type="file" id="endingMovie3" style="display: none;" @change="changeFile"
-                                    data-period="end" data-ref="endingMovie3">
+                                <div @click="chooseFile('endingMovie-3', 'end')" class="step-day-upload">上傳</div>
+                                <input type="file" id="endingMovie-3" style="display: none;" @change="changeFile"
+                                    data-period="end" data-ref="endingMovie-3">
                             </div>
                         </div>
                         <div class="step-day-row">
                             <div class="step-day-title3">結局四 (鷹老師) 影片</div>
-                            <span v-if="judgeHasFile(`endingMovie4`)">{{judgeHasFile(`endingMovie4`)}}</span>
+                            <span v-if="judgeHasFile(`endingMovie-4`)">{{judgeHasFile(`endingMovie-4`)}}</span>
                             <div class="m-flex">
-                                <img v-if="judgeHasFile(`endingMovie4`)" class="step-day-icon"
+                                <img v-if="judgeHasFile(`endingMovie-4`)" class="step-day-icon"
                                     src="~/assets/images/Icon/available.svg" alt="available">
-                                <div @click="chooseFile('endingMovie4', 'end')" class="step-day-upload">上傳</div>
-                                <input type="file" id="endingMovie4" style="display: none;" @change="changeFile"
-                                    data-period="end" data-ref="endingMovie4">
+                                <div @click="chooseFile('endingMovie-4', 'end')" class="step-day-upload">上傳</div>
+                                <input type="file" id="endingMovie-4" style="display: none;" @change="changeFile"
+                                    data-period="end" data-ref="endingMovie-4">
                             </div>
                         </div>
                     </div>

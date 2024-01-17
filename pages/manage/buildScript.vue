@@ -199,17 +199,17 @@ const addScriptEnding = async () => {
     }
 
     await uploadEnding(addData)
-    if (endingData.endingMovie1) {
-        await uploadFileById(addingScriptId, endingData.endingMovie1)
+    if (endingData["endingMovie-1"]) {
+        await uploadFileById(addingScriptId, endingData)
     }
-    if (endingData.endingMovie2) {
-        await uploadFileById(addingScriptId, endingData.endingMovie2)
+    if (endingData["endingMovie-2"]) {
+        await uploadFileById(addingScriptId, endingData["endingMovie-2"])
     }
-    if (endingData.endingMovie3) {
-        await uploadFileById(addingScriptId, endingData.endingMovie3)
+    if (endingData["endingMovie-3"]) {
+        await uploadFileById(addingScriptId, endingData["endingMovie-3"])
     }
-    if (endingData.endingMovie4) {
-        await uploadFileById(addingScriptId, endingData.endingMovie4)
+    if (endingData["endingMovie-4"]) {
+        await uploadFileById(addingScriptId, endingData["endingMovie-4"])
     }
     if (endingData.endingSheet) {
         await uploadFileById(addingScriptId, endingData.endingSheet)
