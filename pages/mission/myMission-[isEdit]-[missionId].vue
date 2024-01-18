@@ -343,7 +343,7 @@
                                 <img class="mission-body-video-img" src="~assets/images/Icon/detail-ccc.svg" alt="">
                                 <div>閱讀文字版</div>
                             </div>
-                            <div @click="qrDownload(currentDetail[`endingMovie-${quadrant}`], `結局日劇情`)"
+                            <div @click="downloadEndQr"
                                 class="mission-body-video-text">
                                 <img class="mission-body-video-img" src="~assets/images/Icon/download-ccc.svg" alt="">
                                 <div>影片 QR code 下載</div>
@@ -435,7 +435,7 @@
                             <div class="mission-body-row4">
                                 <div class="mission-body-head3">結局日影片 QR code </div>
                                 <div 
-                                @click="qrDownload(currentDetail[`endingMovie-${quadrant}`], `結局日劇情`)">
+                                @click="downloadEndQr">
                                     <img class="mission-body-icon" src="~assets/images/Icon/download.svg" alt="">
                                 </div>
                             </div>
@@ -529,6 +529,7 @@
 import { addScore, getScoreByTaskId, getScore, deleteScore } from "~/api/score";
 import { getScriptById, getScript, downloadPDF } from "~/api/script";
 import { getTaskById, edit as editTask } from "~/api/task";
+import { getEndQrUrl } from "~/api/auth";
 import { ElMessage } from 'element-plus'
 import QRCode from 'qrcode'
 
@@ -567,6 +568,25 @@ const qrDownload = (url, fileName) => {
             const elt = document.createElement('a');
             elt.setAttribute('href', QRCodeUrl);
             elt.setAttribute('download', fileName);
+            elt.style.display = 'none';
+            document.body.appendChild(elt);
+            elt.click();
+            document.body.removeChild(elt);
+
+        })
+        .catch(err => {
+            console.error(err)
+        })
+}
+
+const downloadEndQr = async() => {
+    let qrUrlReq = await getEndQrUrl(taskData.taskId)
+    let qrUrl = qrUrlReq.data.value.data
+    QRCode.toDataURL(qrUrl)
+        .then(QRCodeUrl => {
+            const elt = document.createElement('a');
+            elt.setAttribute('href', QRCodeUrl);
+            elt.setAttribute('download', "結局日劇情");
             elt.style.display = 'none';
             document.body.appendChild(elt);
             elt.click();
