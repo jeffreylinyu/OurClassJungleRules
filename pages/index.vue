@@ -3,7 +3,7 @@
     <div class="box">
       <div class="top-block">
         <div class="text-box">
-          <div class="text1">共創友善校園：<br>人際衝突&nbsp; X &nbsp;預防霸凌，啟動學生正面力量！</div>
+          <div class="text1">共創友善校園：<br>人際衝突&nbsp; X &nbsp;預防霸凌，<br>啟動學生正面力量！</div>
           <div class="text2">打造專為國小校園設計的全新教材！
             這套教學教材包含四個引人入勝的劇本，每位角色背後都隱藏著不同的需求。透過生動的故事，學生們將在每段劇情中做出關鍵選擇，推進劇情發展，而他們的決定將共同決定故事的最終結局！
             為孩子們打造一個充滿想像力和互動的學習環境，啟發他們的思考，培養問題解決的能力。
@@ -172,7 +172,7 @@ nextTick(() => {
 
       .text-box {
         display: flex;
-          align-items: center;
+          align-items: start;
           flex-direction: column;
           padding: 0 20px;
           margin: 50px 0 0 0;
@@ -185,7 +185,7 @@ nextTick(() => {
 
         @include respond-to('pad') {
           display: flex;
-          align-items: center;
+          align-items: start;
           flex-direction: column;
           padding: 0 20px;
           margin: 50px 0 0 0;
