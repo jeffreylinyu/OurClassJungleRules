@@ -1597,6 +1597,7 @@ nextTick(() => {
 
         &-head3 {
             font-size: 14px;
+            width: 310px;
         }
 
         &-icon {
