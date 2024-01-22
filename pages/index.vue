@@ -187,7 +187,7 @@ nextTick(() => {
 
         .text1 {
           font-weight: 700;
-          font-size: 48px;
+          font-size: 42px;
           color: $primary1;
           margin-bottom: 40px;
           letter-spacing: 1.5px;
