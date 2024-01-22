@@ -171,9 +171,12 @@ nextTick(() => {
       }
 
       .text-box {
-        margin-top: 50px;
-        margin-right: 7%;
-        width: 40%;
+        display: flex;
+          align-items: center;
+          flex-direction: column;
+          padding: 0 20px;
+          margin: 50px 0 0 0;
+          width: 50%;
 
         @include respond-to('phone') {
           margin: 40px 0 0 20px;
@@ -181,8 +184,12 @@ nextTick(() => {
         }
 
         @include respond-to('pad') {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          padding: 0 20px;
           margin: 50px 0 0 0;
-          width: 90%;
+          width: 50%;
         }
 
         .text1 {
@@ -218,10 +225,10 @@ nextTick(() => {
       .background {
         background-image: url('../assets/images/cover_material.png');
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: auto;
         background-position-x: center;
         background-position-y: center;
-        width: 790.04px;
+        width: 50%;
         height: 533px;
 
         @include respond-to('phone') {
