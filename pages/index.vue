@@ -79,7 +79,7 @@ if (!!urlParams) {
   console.log("urlParams", urlParams)
   useAuthStore().googleLogin(urlParams)
   // router.push(router.currentRoute.value.fullPath);
-  if (urlParams.hasOwnProperty('checkLicense') && urlParams.checkLicense){
+  if (urlParams.hasOwnProperty('checkLicense') && urlParams.checkLicense == "true"){
         router.push({ path: '/mission/myList' });
     } else {
         router.push({ path: '/verificationCode' , query: { isGoogleLogin: true }})

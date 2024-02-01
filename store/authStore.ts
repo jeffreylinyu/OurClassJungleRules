@@ -70,7 +70,7 @@ export const useAuthStore = defineStore("auth", {
       const cookieTempToken = useCookie('tempToken', { maxAge: 60 * 60 * 24 * 7 })
         cookieTempToken.value = data.token
       if (data.hasOwnProperty('checkLicense')) {
-        if (data.checkLicense) {
+        if (data.checkLicense == 'true') {
           this.checkLicense = true
           this.token = data.token
           this.isLogin = true
