@@ -78,7 +78,12 @@ const router = useRouter()
 if (!!urlParams) {
   console.log("urlParams", urlParams)
   useAuthStore().googleLogin(urlParams)
-  router.push(router.currentRoute.value.fullPath);
+  // router.push(router.currentRoute.value.fullPath);
+  if (urlParams.hasOwnProperty('checkLicense') && urlParams.checkLicense){
+        router.push({ path: '/mission/myList' });
+    } else {
+        router.push({ path: '/verificationCode' , query: { isGoogleLogin: true }})
+    }
 }
 
 const allScript = reactive([])
