@@ -29,7 +29,9 @@
 import { verify } from "~/api/license";
 import { ElMessage } from 'element-plus'
 import { useAuthStore } from '@/store/authStore';
+import { googleLogin } from "~/api/auth";
 
+let urlParams = utilities.getUrlParams()
 let shwoGetcode = ref(false);
 const router = useRouter();
 
@@ -39,7 +41,6 @@ const checkLicense = async () => {
         licenseKey: licenseInput.value
     }
     let checkResult = await verify(data)
-    console.log("checkResult", checkResult)
     if (checkResult.data.value.code !== 1) {
         ElMessage.error(checkResult.data.value.message)
     } else {
@@ -47,8 +48,13 @@ const checkLicense = async () => {
             message: '驗證成功',
             type: 'success',
         })
-        await useAuthStore().verificationPassed()
-        router.push({ path: '/mission/myList' })
+        if (urlParams.hasOwnProperty('isGoogleLogin')) {
+            let { data } = await googleLogin()
+            window.location.href = data.value.data;
+        } else {
+            await useAuthStore().verificationPassed()
+            router.push({ path: '/mission/myList' })
+        }
     }
 }
 </script>
