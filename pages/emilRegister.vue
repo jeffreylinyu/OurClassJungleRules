@@ -62,16 +62,33 @@ const register = async () => {
             text: 'Loading',
             background: 'rgba(0, 0, 0, 0.7)',
         })
-        await signup(data)
-        await sendVerificationLetter(data)
+        let response = await signup(data);
+        if (response.data._value.code === 1) {
 
-        loading.close()
-        // ElMessage({
-        //     message: '註冊成功！',
-        //     type: 'success',
-        // })
-        router.push(`/sentMail?mail=${email.value}`)
-        // await handleAuthLogin()
+            ElMessage({
+                message: '註冊成功',
+                type: 'success',
+            })
+
+            handleAuthLogin()
+            
+            
+            await sendVerificationLetter(data)
+            
+            loading.close()
+            router.push(`/sentMail?mail=${email.value}`)
+
+        } else {
+            ElMessage({
+                message: response.data._value.message,
+                type: 'warning',
+            })
+
+            loading.close()
+
+        }
+        
+       
     }
    
 }
