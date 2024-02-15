@@ -26,8 +26,9 @@
                     </el-table-column>
                     <el-table-column prop="status" label="帳號狀態" sortable min-width="160">
                         <template #default="scope">
-                            <div v-if="scope.row.status == '0'" style="color: green;">啟用</div>
-                            <div v-if="scope.row.status == '1'" style="color: red;">停用</div>
+                            <div v-if="scope.row.status == '0'" style="color: gray;">未啟用</div>
+                            <div v-if="scope.row.status == '1'" style="color: green;">啟用</div>
+                            <div v-if="scope.row.status == '2'" style="color: red;">停用</div>
                         </template>
                     </el-table-column>
                     <el-table-column label="操作" sortable min-width="260">
@@ -139,8 +140,14 @@
                             </select>
                         </div>
                         <div class="item-title">帳號狀態</div>
-                        <el-switch style="margin-bottom: 26px;" :active-value="0"
-      :inactive-value="1" v-model="currentUser.status" inline-prompt active-text="啟用" inactive-text="停用" />
+                        <div class="radio-box">
+                            <el-radio-group v-model="currentUser.status">
+                                <el-radio :label="0" disabled size="large">未啟用</el-radio>
+                                <el-radio :label="1" size="large">啟用</el-radio>
+                                <el-radio :label="2" size="large">停用</el-radio>
+                            </el-radio-group>
+                           
+                        </div>
                         <div @click="saveChanges" class="btn-green">儲存</div>
                     </div>
                 </div>
@@ -174,15 +181,15 @@ async function init() {
     allData.length = 0
     let { data: apiAllData } = await getAll();
     let list = apiAllData.value.data.list
-    list = list.filter(o => o.status != 2)
+    // list = list.filter(o => o.status != 2)
     list.map((o, index) => {
-        o.id = index
+        //o.id = index
         o.isEditHove = false
         o.isDeleteHove = false
     })
     allData.push(...list)
     allData.map(o => o.birthday = o.birthday ? o.birthday.split(' ')[0] : "")
-    console.log("allData",allData)
+    console.log("allData", allData)
 }
 
 const setHoverImg = (tableId, type, mouse) => {
@@ -214,12 +221,12 @@ function editUser(id) {
     let filterUser = allData.filter(o => o.id == id)[0]
     filterUser.birthday = filterUser.birthday ? filterUser.birthday.split(' ')[0] : ""
     Object.assign(currentUser, filterUser)
-    console.log("currentUser",currentUser)
+    console.log("currentUser", currentUser)
     isShowEdit.value = true
 }
 
 function saveChanges() {
-    console.log("saveChanges",currentUser)
+    console.log("saveChanges", currentUser)
     currentUser.birthday = dayjs(currentUser.birthday).format('YYYY-MM-DD HH:mm:ss')
     editInfoById(currentUser.id, currentUser).then((res) => {
         ElMessage({
