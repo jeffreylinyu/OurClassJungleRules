@@ -177,7 +177,7 @@ nextTick(() => {
 
       .text-box {
         display: flex;
-          align-items: start;
+          align-items: flex-start;
           flex-direction: column;
           padding: 0 20px;
           margin: 50px 0 0 0;
@@ -190,7 +190,7 @@ nextTick(() => {
 
         @include respond-to('pad') {
           display: flex;
-          align-items: start;
+          align-items: flex-start;
           flex-direction: column;
           padding: 0 20px;
           margin: 50px 0 0 0;

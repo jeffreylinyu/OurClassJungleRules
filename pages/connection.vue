@@ -6,7 +6,7 @@
             <div class="content-box">
                 <div class="title">聯絡阿普蛙</div>
                 <div class="block-box">
-                    <div class="text">歡迎留下聯絡資料，我們將主動通知您最新活動資訊呦。如果對我們的課程有興趣，或想跟我們合作，更請務必填寫，我們會進一步。</div>
+                    <div class="text">若對本教材有任何疑問或指教，都歡迎與我們聯繫。我們也有提供其他課程及教材，若有興趣也歡迎來信，我們會再跟您聯絡。</div>
                     <div class="item-title">*姓名</div>
                     <div class="name-item">
                         <input class="input" placeholder="名字" type="text">
