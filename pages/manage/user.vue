@@ -24,6 +24,12 @@
                     </el-table-column>
                     <el-table-column prop="registionTime" label="註冊時間" sortable min-width="160">
                     </el-table-column>
+                    <el-table-column prop="status" label="帳號狀態" sortable min-width="160">
+                        <template #default="scope">
+                            <div v-if="scope.row.status == '0'" style="color: green;">啟用</div>
+                            <div v-if="scope.row.status == '1'" style="color: red;">停用</div>
+                        </template>
+                    </el-table-column>
                     <el-table-column label="操作" sortable min-width="260">
                         <template #default="scope">
                             <div class="Mtable-row">
@@ -34,7 +40,8 @@
                                         src="@/assets/images/Icon/edit_hover.svg" alt="close">
                                     <img v-else class="Mtable-icon" src="@/assets/images/Icon/edit.svg" alt="close">
                                 </div>
-                                <div class="Mtable-icon-outer" @click="deleteUser(scope.row.id)" @mouseover="setHoverImg(scope.row.id, 'delete', 'mouseover')"
+                                <div class="Mtable-icon-outer" @click="deleteUser(scope.row.id)"
+                                    @mouseover="setHoverImg(scope.row.id, 'delete', 'mouseover')"
                                     @mouseleave="setHoverImg(scope.row.id, 'delete', 'mouseleave')">
                                     <img v-if="scope.row.isDeleteHove" class="Mtable-icon"
                                         src="@/assets/images/Icon/delete_hover.svg" alt="close">
@@ -131,6 +138,9 @@
                                 <option value="其他">其他</option>
                             </select>
                         </div>
+                        <div class="item-title">帳號狀態</div>
+                        <el-switch style="margin-bottom: 26px;" :active-value="0"
+      :inactive-value="1" v-model="currentUser.status" inline-prompt active-text="啟用" inactive-text="停用" />
                         <div @click="saveChanges" class="btn-green">儲存</div>
                     </div>
                 </div>
@@ -172,6 +182,7 @@ async function init() {
     })
     allData.push(...list)
     allData.map(o => o.birthday = o.birthday ? o.birthday.split(' ')[0] : "")
+    console.log("allData",allData)
 }
 
 const setHoverImg = (tableId, type, mouse) => {
@@ -203,10 +214,12 @@ function editUser(id) {
     let filterUser = allData.filter(o => o.id == id)[0]
     filterUser.birthday = filterUser.birthday ? filterUser.birthday.split(' ')[0] : ""
     Object.assign(currentUser, filterUser)
+    console.log("currentUser",currentUser)
     isShowEdit.value = true
 }
 
 function saveChanges() {
+    console.log("saveChanges",currentUser)
     currentUser.birthday = dayjs(currentUser.birthday).format('YYYY-MM-DD HH:mm:ss')
     editInfoById(currentUser.id, currentUser).then((res) => {
         ElMessage({
