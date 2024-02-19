@@ -86,7 +86,7 @@
       <nuxt-link v-if="!isLogin" to="/login">
         <div class="login-btn">登入 / 註冊</div>
       </nuxt-link>
-      <nuxt-link v-if="!checkLicense" to="/purchaseProcess">
+      <nuxt-link v-if="!checkLicense" to="https://forms.gle/539SzTyCjuFXrTmN8">
         <div class="get-btn">立即取得</div>
       </nuxt-link>
     </div>
@@ -167,7 +167,7 @@
             登入 / 註冊
           </div>
         </nuxt-link>
-        <nuxt-link v-if="!checkLicense" to="/purchaseProcess">
+        <nuxt-link v-if="!checkLicense" to="https://forms.gle/539SzTyCjuFXrTmN8">
           <div class="get-btn">立即取得</div>
         </nuxt-link>
         <div v-if="isLogin" @click="handleSignOut" class="signOut-box">
