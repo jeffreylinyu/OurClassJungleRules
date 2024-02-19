@@ -23,7 +23,7 @@
                         <div class="item-text">原價 $1,500，現有教育推廣價 $1,350。</div>
                     </div>
                 </div>
-                <nuxt-link to="/purchaseProcess" class="btn">
+                <nuxt-link to="https://forms.gle/539SzTyCjuFXrTmN8" class="btn">
                     購買註冊碼
                 </nuxt-link>
             </el-dialog>
