@@ -20,7 +20,7 @@
                     </div>
                     <div class="item-box">
                         <div class="item-title">註冊碼的費用？</div>
-                        <div class="item-text">原價 $1,500，現有教育推廣價 $1,350。</div>
+                        <div class="item-text">原價 $1,500，現有教育推廣價 $800。</div>
                     </div>
                 </div>
                 <nuxt-link to="https://forms.gle/539SzTyCjuFXrTmN8" class="btn">
