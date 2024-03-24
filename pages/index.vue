@@ -4,9 +4,12 @@
       <div class="top-block">
         <div class="text-box">
           <div class="text1">共創友善校園：<br>人際衝突&nbsp; X &nbsp;預防霸凌，<br>啟動學生正面力量！</div>
-          <div class="text2">打造專為國小校園設計的全新教材！
-            這套教學教材包含四個引人入勝的劇本，每位角色背後都隱藏著不同的需求。透過生動的故事，學生們將在每段劇情中做出關鍵選擇，推進劇情發展，而他們的決定將共同決定故事的最終結局！
-            為孩子們打造一個充滿想像力和互動的學習環境，啟發他們的思考，培養問題解決的能力。
+          <div class="text2">
+            打造專為國小校園設計的全新教材！<br>
+            這套教學教材包含 4 個人際衝突的故事，<br>
+            每位角色背後都隱藏著不同的需求。<br>
+            透過生動的故事，學生們將在每段劇情中做出關鍵選擇，<br>
+            推進劇情發展，而他們的決定將共同決定故事的最終結局！
           </div>
         </div>
         <div class="background"></div>
@@ -41,10 +44,8 @@
     </div>
     <div class="third-block">
       <div class="content-box">
-        <div class="title">關於教材</div>
-        <div class="text">我們已將教學所需要使用的素材全部放在網站上，包含 &nbsp;26&nbsp; 部影片、各個劇本所要用的教學簡報、學習單等，讓老師們準備課程更加便利！<br>
-          透過這個課程，孩子將會認識人的『需求』，而且我們不只是告訴他們方法，還會引導他們討論如何『適當』地滿足這些需求。我們的目標是培養孩子自己發現事物、關心別人的能力。
-        </div>
+        <div class="title">故事內容</div>
+        <div class="text">本教材共有 4 個故事，每個故事長短不一，且分別呈現了人際衝突中常見的 4 種需求。</div>
         <div class="item-box">
           <div v-for="data in allScript" :key="data.scriptId" class="item">
             <div class="background" :style="`background: no-repeat center/cover url(${data.imgUrl})`"></div>

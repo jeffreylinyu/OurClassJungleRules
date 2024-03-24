@@ -1,5 +1,6 @@
 <template>
   <div class="box">
+    <PaidMemberDialog v-model="isPaidMemberDialogShow"></PaidMemberDialog>
     <nuxt-link class="title" to="/">
       <div>我們班的叢林法則</div>
     </nuxt-link>
@@ -20,10 +21,13 @@
           </div>
         </div>
       </div>
-      <nuxt-link to="/about" class="link" :class="{ 'link-action': routeName == 'about' }">
+      <a href="https://www.wasupstudio.com/about.html" target="_blank" class="link" :class="{ 'link-action': routeName == 'about' }">關於阿普蛙
+        <div v-if="routeName == 'about'" class="decoration"></div>
+      </a>
+      <!-- <nuxt-link to="/about" class="link" :class="{ 'link-action': routeName == 'about' }">
         關於阿普蛙
         <div v-if="routeName == 'about'" class="decoration"></div>
-      </nuxt-link>
+      </nuxt-link> -->
       <nuxt-link to="/connection" class="link" :class="{ 'link-action': routeName == 'connection' }">
         聯絡阿普蛙
         <div v-if="routeName == 'connection'" class="decoration"></div>
@@ -86,9 +90,7 @@
       <nuxt-link v-if="!isLogin" to="/login">
         <div class="login-btn">登入 / 註冊</div>
       </nuxt-link>
-      <nuxt-link v-if="!checkLicense" to="https://forms.gle/539SzTyCjuFXrTmN8">
-        <div class="get-btn">立即取得</div>
-      </nuxt-link>
+      <div v-if="!checkLicense" @click="isPaidMemberDialogShow = true" class="get-btn">立即購買</div>
     </div>
 
     <div class="item-box-phone">
@@ -102,7 +104,7 @@
         <nuxt-link to="/" class="link" :class="{ 'link-action': routeName == 'index' }">
           首頁
         </nuxt-link>
-        <div class="link sublink" @click="isOpenSubbox = !isOpenSubbox"
+        <!-- <div class="link sublink" @click="isOpenSubbox = !isOpenSubbox"
           :class="{ 'link-action': routeName == 'chapter' }">
           劇本介紹 <span>▾</span>
         </div>
@@ -113,11 +115,12 @@
               <div class="subitem">{{ data.title }}</div>
             </nuxt-link>
           </div>
-        </div>
+        </div> -->
 
-        <nuxt-link to="/about" class="link" :class="{ 'link-action': routeName == 'about' }">
+        <!-- <nuxt-link to="/about" class="link" :class="{ 'link-action': routeName == 'about' }">
           關於阿普蛙
-        </nuxt-link>
+        </nuxt-link> -->
+        <a href="https://www.wasupstudio.com/about.html" target="_blank" class="link" :class="{ 'link-action': routeName == 'about' }">關於阿普蛙</a>
         <nuxt-link to="/connection" class="link" :class="{ 'link-action': routeName == 'connection' }">
           聯絡阿普蛙
         </nuxt-link>
@@ -167,13 +170,15 @@
             登入 / 註冊
           </div>
         </nuxt-link>
-        <nuxt-link v-if="!checkLicense" to="https://forms.gle/539SzTyCjuFXrTmN8">
-          <div class="get-btn">立即取得</div>
-        </nuxt-link>
+        <div v-if="!checkLicense" @click="isPaidMemberDialogShow = true">
+          <div class="get-btn">立即購買</div>
+        </div>
         <div v-if="isLogin" @click="handleSignOut" class="signOut-box">
           登出
         </div>
+        
       </div>
+
     </div>
   </div>
 </template>
@@ -183,6 +188,11 @@ import { Search } from '@element-plus/icons-vue'
 import { useAuthStore } from '@/store/authStore';
 import { storeToRefs } from 'pinia'
 import { getScriptByNoToken as getScript } from "~/api/script";
+
+let isPaidMemberDialogShow = ref(false)
+const closeDialog = () => {
+  isPaidMemberDialogShow.value = false
+}
 
 let auth = useAuthStore()
 const { isLogin, permissions, checkLicense } = storeToRefs(auth)

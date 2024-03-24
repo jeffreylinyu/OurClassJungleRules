@@ -8,7 +8,7 @@
       </div>
       <div class="content content2">
         <div class="title">幫助</div>
-        <nuxt-link to="/about" class="link-item">關於阿普蛙</nuxt-link>
+        <a href="https://www.wasupstudio.com/about.html" target="_blank" class="link-item">關於阿普蛙</a>
         <nuxt-link to="/question" class="link-item">常見問題</nuxt-link>
         <nuxt-link to="/connection" class="link-item">聯絡阿普蛙</nuxt-link>
       </div>

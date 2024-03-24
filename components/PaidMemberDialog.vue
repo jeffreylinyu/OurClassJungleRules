@@ -3,10 +3,10 @@
         <div class="dialog-box">
             <el-dialog v-model="props.modelValue" :before-close="handleClose">
                 <template #header>
-                    <div class="title">成為付費會員</div>
+                    <div class="title">選擇付款方式</div>
                 </template>
                 <div class="content-box">
-                    <div class="item-box">
+                    <!-- <div class="item-box">
                         <div class="item-title">為什麼要成為付費會員?</div>
                         <div class="item-text">網站上的劇本教材僅提供給付費會員，註冊時登入一組註冊碼就可以使用網站所有開放的劇本遊戲。</div>
                     </div>
@@ -21,11 +21,15 @@
                     <div class="item-box">
                         <div class="item-title">註冊碼的費用？</div>
                         <div class="item-text">原價 $1,500，現有教育推廣價 $800。</div>
-                    </div>
+                    </div> -->
                 </div>
-                <nuxt-link to="https://forms.gle/539SzTyCjuFXrTmN8" class="btn">
-                    購買註冊碼
-                </nuxt-link>
+                <a href="https://forms.gle/xGEA1VfgdNPF718b8" target="_blank" class="btn">
+                    匯款/ATM轉帳
+                </a>
+                <br><br>
+                <a href="https://forms.gle/xGEA1VfgdNPF718b8" target="_blank" class="btn">
+                    信用卡付款
+                </a>
             </el-dialog>
         </div>
     </client-only>

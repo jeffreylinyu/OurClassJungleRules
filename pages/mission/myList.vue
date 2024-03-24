@@ -70,21 +70,21 @@
             <div @click="isShowAdd = false" class="box">
                 <div @click.stop class="block-box">
                     <div class="title">
-                        <span>建立新任務</span>
+                        <span>建立新任務(點擊 Ⓘ 說明)</span>
                         <el-popover :width="700" trigger="click">
                             <template #reference>
                                 <img class="information" src="@/assets/images/Icon/information.svg" alt="close">
                             </template>
                             <div class="container">
                                 <ol>
-                                    <li class="list-item">
+                                    <!-- <li class="list-item">
                                         請點選畫面最上排的「我的任務」。
                                     </li>
                                     <li class="list-item">
                                         進到「我的任務」畫面後，請點選右側的「建立新任務」。
-                                    </li>
+                                    </li> -->
                                     <li class="list-item">
-                                        請點選畫面最上排的「我的任務」。
+                                        各欄位說明。
                                         <ul class="sub-list">
                                             <li class="sub-list-item">任務名稱：可輸入要帶領的班級名稱，方便自己辨識，例如：一年三班。</li>
                                             <li class="sub-list-item">選擇劇本：選擇欲使用的劇本，共有 4 篇可選，各有不同的帶領天數。</li>
