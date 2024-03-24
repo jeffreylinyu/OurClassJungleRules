@@ -47,14 +47,19 @@
         <div class="title">故事內容</div>
         <div class="text">本教材共有 4 個故事，每個故事長短不一，且分別呈現了人際衝突中常見的 4 種需求。</div>
         <div class="item-box">
-          <div v-for="data in allScript" :key="data.scriptId" class="item">
-            <div class="background" :style="`background: no-repeat center/cover url(${data.imgUrl})`"></div>
-            <div class="item-title"><div>{{ data.title1 }}</div><div>{{ data.title2 }}</div></div>
-            <div class="item-content">{{ data.description }}</div>
-            <nuxt-link :to="`/chapter-${data.scriptId}`" class="item-btn">
-              <span class="btn-span">劇本介紹</span>
+          <div v-for="data in newScript" :key="data.id" class="item">
+            <div class="background" :class="`background-${data.id}`"
+            ></div>
+            <div class="item-title">{{ data.head }}</div>
+            <div class="item-content">
+              故事大綱：{{ data.story }}<br>
+              需求類型：{{ data.type }}<br>
+              操作時間：{{ data.time }}<br>
+            </div>
+            <div @click="videoPlay(data.video)" class="item-btn">
+              <span class="btn-span">第一日影片試播</span>
               <span class="arrowIcon">➔</span>
-            </nuxt-link>
+            </div>
           </div>
 
         </div>
@@ -65,6 +70,13 @@
       </div>
     </div>
     <getTextbooks></getTextbooks>
+    <div class="centerDialog">
+      <client-only>
+          <el-dialog v-model="centerDialogVisible">
+              <video v-if="centerDialogVisible" :src="currentVideoUrl" controls></video>
+          </el-dialog>
+      </client-only>
+  </div>
   </NuxtLayout>
 </template>
 
@@ -85,6 +97,52 @@ if (!!urlParams) {
     } else {
         router.push({ path: '/verificationCode' , query: { isGoogleLogin: true }})
     }
+}
+
+const newScript = reactive([
+  {
+    id: '0',
+    img: '../assets/images/scripts/body.jpg',
+    head: '《萌虎怎麼了》',
+    story: '萌虎有過動症，某天因為不滿同學的開玩笑，難以控制情緒而引發衝突。',
+    type: '生理需求',
+    time: '10 分鐘＋一節課',
+    video: 'https://storage.googleapis.com/wasupstudio-bucket/video/1703443475693.mp4'
+  },
+  {
+    id: '1',
+    img: '../assets/images/scripts/play.jpg',
+    head: '《為什麼不跟我玩》',
+    story: '俏鼠想要跟同學玩，卻不知道「一直戳」同學，會讓他人感到不舒服。',
+    type: '玩樂需求',
+    time: '10 分鐘 x2＋一節課',
+    video: 'https://storage.googleapis.com/wasupstudio-bucket/video/1703445014261.mp4'
+  },
+  {
+    id: '2',
+    img: '../assets/images/scripts/friend.jpg',
+    head: '《金馬的秘密》',
+    story: '金馬為了融入籃球校隊的群體，卻不知道該如何拒絕不合理的要求，反而傷害了原本要好的同學。',
+    type: '同儕歸屬',
+    time: '10 分鐘 x3＋一節課',
+    video: 'https://storage.googleapis.com/wasupstudio-bucket/video/1703445184614.mp4'
+  },
+  {
+    id: '3',
+    img: '../assets/images/scripts/power.jpg',
+    head: '《班長是公僕還是國王》',
+    story: '班長為了帶領班上獲得好的班級競賽成績，與同學們制定了班規，在執行新班規的期間，逐漸累積了「民怨」。',
+    type: '權力與掌握',
+    time: '10分鐘 x4＋一節課',
+    video: 'https://storage.googleapis.com/wasupstudio-bucket/1697747252310.mp4'
+  },
+])
+
+const currentVideoUrl = ref("")
+const centerDialogVisible = ref(false)
+const videoPlay = (url) => {
+    currentVideoUrl.value = url
+    centerDialogVisible.value = true
 }
 
 const allScript = reactive([])
@@ -155,6 +213,38 @@ nextTick(() => {
 </script>
 
 <style lang="scss" scoped>
+
+// @import '~/assets/styles/popup.scss';
+
+.arrow-rotate {
+    transform: rotate(180deg);
+}
+
+.centerDialog :deep(.el-dialog__header) {
+    height: 0px;
+    padding: 0px;
+}
+
+.centerDialog :deep(.el-dialog__body) {
+    padding: 0px;
+    display: flex;
+}
+
+.centerDialog :deep(.el-dialog) {
+    width: 900px;
+    border-radius: 12px;
+}
+
+.centerDialog :deep(.el-dialog__headerbtn) {
+    z-index: 9999;
+}
+
+.centerDialog video {
+    width: 900px;
+    border-radius: 12px;
+}
+
+
 .box {
   width: 100%;
 
@@ -481,7 +571,7 @@ nextTick(() => {
             min-width: 279px;
             max-width: 279px;
             margin-bottom: 15px;
-            height: 350px;
+            height: 500px;
             background: $secondary2;
             border: 3px solid $border4;
             border-radius: 32px;
@@ -498,14 +588,30 @@ nextTick(() => {
 
             .background {
               background-color: #fffbf4;
-              background-image: url('../assets/images/cover_material.png');
+              background-image: url('../assets/images/scripts/body.jpg');
               width: 100%;
               height: 175px;
               background-repeat: no-repeat;
-              background-size: 110%;
-              background-position-x: right;
-              background-position-y: bottom;
+              background-size: cover;
+              background-position-x: center;
+              background-position-y: center;
               border: 1px solid $border3;
+            }
+
+            .background-0 {
+              background-image: url('../assets/images/scripts/body.jpg');
+            }
+
+            .background-1 {
+              background-image: url('../assets/images/scripts/play.jpg');
+            }
+
+            .background-2 {
+              background-image: url('../assets/images/scripts/friend.jpg');
+            }
+
+            .background-3 {
+              background-image: url('../assets/images/scripts/power.jpg');
             }
 
             &-title {
@@ -524,13 +630,13 @@ nextTick(() => {
               font-weight: 400;
               font-size: 16px;
               color: $text2;
-              margin-top: 12px;
+              margin-bottom: 5px;
               letter-spacing: 0.5px;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
+              // overflow: hidden;
+              // text-overflow: ellipsis;
+              // white-space: nowrap;
               width: 80%;
-
+              height: 180px;
             }
 
             &-btn {
