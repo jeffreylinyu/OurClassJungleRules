@@ -63,11 +63,111 @@
           </div>
 
         </div>
-        <div class="content">
-          每天發生一段故事，學生回家可以和家長一起討論，隔天回到學校，再和同學們一起決定故事如何發展。每個選擇都會影響結局唷！最後，由老師帶領大家一起聊聊劇情結局。這樣的學習方式不僅有趣，也能讓孩子在遊戲中學到更多！
 
+        <div class="method">
+          <div class="method-head">
+            <div class="method-head-title">操作方式：</div>
+            <div class="method-head-sub">以《為什麼不跟我玩》為例</div>
+          </div>
+
+          <div class="method-box">
+            <img class="method-img" src="~assets/images/cover_material.png" alt="">
+            <div class="method-row">
+              <div class="method-day">Day 1<br>10分鐘</div>
+              <div class="method-text">
+                播放故事影片，讓學生了解劇情，<br>
+                並發放學習單，讓學生帶回去與家長討論。
+              </div>
+            </div>
+            <div class="method-row">
+              <div class="method-day">Day 2<br>10分鐘</div>
+              <div class="method-text">
+                在課堂上統計各組的答案，填入網站系統。<br>
+                接著播放第二日故事影片，並發放學習單。
+              </div>
+            </div>
+            <div class="method-row">
+              <div class="method-day">Day 3<br>一節課</div>
+              <div class="method-text">
+                在課堂上統計各組的答案，填入網站系統。<br>
+                網站將根據前 2 天的答案給出不同的結局（結局共有 4 種）。<br>
+                接著發放學習單，討論結局故事中角色的需求，以及該如何因應。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          4 則故事的複雜度各不相同，所以進行天數也不同，例《萌虎怎麼了》的故事比較單純，只需要操作 2 天，適合國小中年級或老師們第一次操作；《班長是公僕還是國王》的故事最為複雜且跟學生的人際發展有關，要進行 5 天，適合國小高年級或較熟悉流程的老師操作。
+        </div>
+
+        <div class="about">
+          <div class="about-head">關於結局</div>
+          <div class="about-text">
+            每篇故事的結局有四種，由四位老師代表不同的衝突處理方式。整班同學的選擇，將在結局時召喚其中一位老師，反映出學生在處理衝突時的傾向。<br><br>
+            我們認為處理班級衝突時，需要關注學生間及師生間的「關係」，且須兼顧班級「秩序」 。從關係和秩序的兩個向度，可交織出四種象限：
+          </div>
+          <img class="about-img" src="~assets/images/result_rules2.png" alt="">
+        </div>
+
+      </div>
+
+      
+    </div>
+
+    <div class="intro">
+      <div class="intro-outer">
+        <div class="intro-content">
+          <div class="intro-row">
+            <div class="intro-price">NT.1200</div>
+            <div class="intro-price-old">NT.1500</div>
+          </div>
+          <div class="intro-text">
+            *本教材可使用折扣碼<br>
+            *首賣折扣碼「nobullying」，再折 300 元。<br><br>
+
+            內含：<br>
+            教學簡報 X 4<br>
+            故事影片 X 26<br>
+            學習單 X 14<br>
+            線上計分系統<br>
+            詳細操作說明
+          </div>
+          <div class="intro-title">***購買一套即可全班操作***</div>
+          <div class="intro-text">
+            ｜課程目標｜<br>
+            深入了解人際衝突中的情感與需求。<br>
+            探討旁觀者的力量，如何影響事件發展。<br>
+            共同思考衝突事件的聰明因應策略。<br><br>
+
+            ｜課程內容｜<br>
+            戲劇體驗：融入虛構的叢林班日常，透過生動戲劇影片，一同探討角色未來的選擇。<br>
+            引導反思：從角色感受與需求出發，引導深入討論合理的因應策略，讓學生更理解彼此的情感需求。
+          </div>
+        </div>
+
+        <div class="intro-imgs">
+          <img class="intro-img-big" src="~assets/images/result_rules2.png" alt="">
+          <div class="intro-row">
+            <div class="intro-column">
+              <img class="intro-img" src="~assets/images/result_rules2.png" alt="">
+              <div class="intro-sub">教學簡報檔</div>
+            </div>
+            <div class="intro-column">
+              <img class="intro-img" src="~assets/images/result_rules2.png" alt="">
+              <div class="intro-sub">學習單</div>
+            </div>
+          </div>
+          <div class="intro-buy">立即購買</div>
         </div>
       </div>
+    </div>
+
+    <div class="new-content">
+      【感謝名單】<br>
+      感謝財團法人RC教育基金會支持本教材開發！<br>
+      感謝基隆市中和國小、仁愛國小協助遊戲測試！<br>
+      感謝蘇明進老師、杜佳憲主任、王振皓老師、陳俞君老師協助測試，並提供寶貴意見！
     </div>
     <getTextbooks></getTextbooks>
     <div class="centerDialog">
@@ -688,6 +788,242 @@ nextTick(() => {
           }
         }
       }
+    }
+
+  }
+
+  // 操作方式
+
+  .method {
+    max-width: 1200px;
+    width: 100%;
+    margin: 30px 0px;
+    padding: 0px 14px;
+
+    &-head {
+      display: flex;
+      font-size: 32px;
+      letter-spacing: 1.5px;
+
+      @include respond-to('phone') {
+        font-size: 24px;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &-head-title {
+      color: #007362;
+      font-weight: 700;
+    }
+
+    &-head-sub {
+      margin-left: 0px;
+    }
+
+    &-box {
+      position: relative;
+      margin-top: 40px;
+    }
+
+    &-img {
+      position: absolute;
+      top: 0px;
+      right: 50px;
+      width: 400px;
+
+      @include respond-to('phone') {
+        display: none;
+      }
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      margin: 0px 0px 20px;
+
+      @include respond-to('phone') {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    &-day {
+      padding: 10px 20px;
+      font-size: 32px;
+      background-color: #FFC300;
+      border-radius: 10px;
+      color: white;
+    }
+
+    &-text {
+      margin-left: 20px;
+      font-size: 18px;
+
+      @include respond-to('phone') {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  // 關於結局
+
+  .about {
+    max-width: 1200px;
+    margin: 50px 14px 0px 14px;
+
+    @include respond-to('phone') {
+      
+    }
+
+    &-head {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #007362;
+    }
+
+    &-text {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+
+    &-img {
+      margin-top: 10px;
+    }
+  }
+
+  // 介紹
+
+  .intro {
+    padding: 20px 30px 20px;
+    background-color: #007362;
+    color: white;
+      
+    @include respond-to('phone') {
+      padding: 14px 14px 30px;
+    }
+
+    &-outer {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      
+      @include respond-to('phone') {
+        flex-direction: column;
+      }
+    }
+
+    &-content {
+      
+    }
+
+    &-row {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &-price {
+      color: #FFC300;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    &-price-old {
+      margin-left: 20px;
+      font-size: 24px;
+    }
+
+    &-text {
+      font-size: 18px;
+      line-height: 1.8;
+      
+      @include respond-to('phone') {
+        font-size: 16px;
+      }
+    }
+
+    &-title {
+      margin: 20px 0px;
+      color: #FFC300;
+      font-size: 32px;
+      font-weight: bold;
+      
+      @include respond-to('phone') {
+        font-size: 24px;
+      }
+    }
+
+    &-imgs {
+      margin-top: 20px;
+    }
+
+    &-img-big {
+      width: 350px;
+      margin: auto;
+      
+      @include respond-to('phone') {
+        width: 100%;
+      }
+    }
+
+    &-img {
+      width: 280px;
+      
+      @include respond-to('phone') {
+        width: 50vw;
+      }
+
+    }
+
+    &-column {
+      margin: 30px 10px 0px;
+    }
+
+    &-sub {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    &-buy {
+      margin: 32px auto 0px;
+      width: 149px;
+      height: 56px;
+      background: #FFC300;
+      color: black;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+  }
+
+  .new-content {
+    max-width: 1164px;
+    width: 100%;
+    background: #FFFBF4;
+    border: 3px solid #008B77;
+    border-radius: 32px;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px auto;
+    letter-spacing: 0.5px;
+    padding: 32px;
+
+    @include respond-to('phone') {
+      width: 90%;
+      height: auto;
+      padding: 32px;
+      margin-bottom: 36px;
     }
 
   }
