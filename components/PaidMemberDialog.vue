@@ -8,7 +8,7 @@
                 <div class="content-box">
                     <!-- <div class="item-box">
                         <div class="item-title">為什麼要成為付費會員?</div>
-                        <div class="item-text">網站上的劇本教材僅提供給付費會員，註冊時登入一組註冊碼就可以使用網站所有開放的劇本遊戲。</div>
+                        <div class="item-text">網站上的故事教材僅提供給付費會員，註冊時登入一組註冊碼就可以使用網站所有開放的故事遊戲。</div>
                     </div>
                     <div class="item-box">
                         <div class="item-title">註冊碼是什麼?</div>
@@ -27,7 +27,7 @@
                     匯款/ATM轉帳
                 </a>
                 <br><br>
-                <a href="https://forms.gle/xGEA1VfgdNPF718b8" target="_blank" class="btn">
+                <a href="https://portaly.cc/wasupstudio" target="_blank" class="btn">
                     信用卡付款
                 </a>
             </el-dialog>

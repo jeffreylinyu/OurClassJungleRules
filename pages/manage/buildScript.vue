@@ -86,13 +86,13 @@ const detailVerify = () => {
     let endingVerify = Object.keys(endingData).length !== 0
     if (!detailVerify) {
         ElMessage({
-            message: '請填寫劇本詳細內容！',
+            message: '請填寫故事詳細內容！',
             type: 'warning',
         })
         return false
     } else if (!endingVerify) {
         ElMessage({
-            message: '請填寫劇本結局日內容！',
+            message: '請填寫故事結局日內容！',
             type: 'warning',
         })
         return false
@@ -105,17 +105,17 @@ const infoVerify = () => {
     let verify = false
     if (infoData.title === '') {
         ElMessage({
-            message: '請輸入劇本名稱！',
+            message: '請輸入故事名稱！',
             type: 'warning',
         })
     } else if (infoData.description === '') {
         ElMessage({
-            message: '請輸入劇本簡述！',
+            message: '請輸入故事簡述！',
             type: 'warning',
         })
     } else if (infoData.scriptPeriod === '') {
         ElMessage({
-            message: '請輸入劇本時長！',
+            message: '請輸入故事時長！',
             type: 'warning',
         })
     } else {

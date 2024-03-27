@@ -15,17 +15,17 @@
 
             <!-- body -->
             <div class="step-body">
-                <div class="step-body-title">*劇本封面</div>
+                <div class="step-body-title">*故事封面</div>
                 <input type="file" accept=".jpg,.jpeg,.png" ref="fileInput" @change="handleFileUpload"
                     style="display: none;" />
                 <img v-if="isPhoto" class="step-body-img" :src="previewImage" alt="">
                 <div @click="triggerFileUpload" class="step-body-upload">上傳圖片</div>
                 <div v-if="!isPhoto" class="step-body-upload-hint">尺寸建議為 1920 x 300px</div>
-                <div class="step-body-title">*劇本名稱</div>
+                <div class="step-body-title">*故事名稱</div>
                 <input v-model="scriptName" class="input step-body-input" placeholder="請輸入名稱" type="text">
-                <div class="step-body-title">*劇本簡述</div>
+                <div class="step-body-title">*故事簡述</div>
                 <input v-model="scriptDescription" class="input step-body-input" placeholder="ex.潛在霸凌者需求：生理需求" type="text">
-                <div class="step-body-title">*劇本時長 (日)</div>
+                <div class="step-body-title">*故事時長 (日)</div>
                 <input v-model="scriptDuration" min="2" class="input step-body-input2" placeholder="請輸入數值" type="number">
                 <div class="step-body-hint">最少 2 日</div>
 
@@ -104,17 +104,17 @@ const verify = () => {
     let verify = false
     if (scriptName.value === '') {
         ElMessage({
-            message: '請輸入劇本名稱！',
+            message: '請輸入故事名稱！',
             type: 'warning',
         })
     } else if (scriptDescription.value === '') {
         ElMessage({
-            message: '請輸入劇本簡述！',
+            message: '請輸入故事簡述！',
             type: 'warning',
         })
     } else if (scriptDuration.value === '') {
         ElMessage({
-            message: '請輸入劇本時長！',
+            message: '請輸入故事時長！',
             type: 'warning',
         })
     } else if (teachingFocus.length == 0) {

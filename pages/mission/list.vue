@@ -23,7 +23,7 @@
                 <el-table :data="allData" style="width: 100%" empty-text="暫無數據">
                     <el-table-column prop="taskName" label="任務名稱" sortable min-width="160">
                     </el-table-column>
-                    <el-table-column prop="script" label="劇本" sortable min-width="160">
+                    <el-table-column prop="script" label="故事" sortable min-width="160">
                         <template #default="scope">
                             {{ getScriptNameById(scope.row.scriptId) }}
                         </template>

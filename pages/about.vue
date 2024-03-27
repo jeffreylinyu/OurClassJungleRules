@@ -81,7 +81,7 @@
                         <div class="item-title">興趣：</div>
                         <div class="text">教育、哲學、心靈成長、社會創新</div>
                         <div class="item-title">專長：</div>
-                        <div class="text">遊戲設計、創作劇本</div>
+                        <div class="text">遊戲設計、創作故事</div>
                     </div>
                     <div class="item-box">
                         <div>

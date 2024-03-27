@@ -4,21 +4,21 @@
         <div class="step-day-title4">基本設定</div>
         <div class="step-day-outer">
             <div class="step-day-row">
-                <div class="step-day-title5">劇本封面</div>
+                <div class="step-day-title5">故事封面</div>
                 <div class="step-day-img">
                     <img v-if="props.infoData.imgData !== ''" :src="props.infoData.imgData" alt="">
                 </div>
             </div>
             <div class="step-day-row">
-                <div class="step-day-title5">劇本名稱</div>
+                <div class="step-day-title5">故事名稱</div>
                 <div class="step-day-text">{{ props.infoData.title }}</div>
             </div>
             <div class="step-day-row">
-                <div class="step-day-title5">劇本簡述</div>
+                <div class="step-day-title5">故事簡述</div>
                 <div class="step-day-text">{{ props.infoData.description }}</div>
             </div>
             <div class="step-day-row">
-                <div class="step-day-title5">劇本時長 (天)</div>
+                <div class="step-day-title5">故事時長 (天)</div>
                 <div class="step-day-text">{{ props.infoData.scriptPeriod }}天</div>
             </div>
             <div class="step-day-row">

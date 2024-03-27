@@ -17,19 +17,19 @@
             <div class="step-day-title4">基本設定</div>
             <div class="step-day-outer">
                 <div class="step-day-row">
-                    <div class="step-day-title5">劇本封面</div>
+                    <div class="step-day-title5">故事封面</div>
                     <div class="step-day-img"></div>
                 </div>
                 <div class="step-day-row">
-                    <div class="step-day-title5">劇本名稱</div>
+                    <div class="step-day-title5">故事名稱</div>
                     <div class="step-day-text">虎兔篇</div>
                 </div>
                 <div class="step-day-row">
-                    <div class="step-day-title5">劇本簡述</div>
+                    <div class="step-day-title5">故事簡述</div>
                     <div class="step-day-text">潛在霸凌者需求：生理需求</div>
                 </div>
                 <div class="step-day-row">
-                    <div class="step-day-title5">劇本時長 (天)</div>
+                    <div class="step-day-title5">故事時長 (天)</div>
                     <div class="step-day-text">2天</div>
                 </div>
                 <div class="step-day-row">

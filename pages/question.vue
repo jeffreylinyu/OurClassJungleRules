@@ -6,18 +6,18 @@
                 <el-collapse v-model="activeNames" @change="handleChange">
                     <el-collapse-item title="一、這份教材包含哪些內容？" name="1">
                         <div>
-                            1. 這份教材包含 4 個長度不等的劇本，用來探討 4 種不同的潛在霸凌情境及霸凌者需求。
+                            1. 這份教材包含 4 個長度不等的故事，用來探討 4 種不同的潛在霸凌情境及霸凌者需求。
                         </div>
                         <div>
-                            2. 每則劇本都含有影片、教學簡報、學習單以及線上計分系統供老師使用。
+                            2. 每則故事都含有影片、教學簡報、學習單以及線上計分系統供老師使用。
                         </div>
                     </el-collapse-item>
-                    <el-collapse-item title="二、不同劇本需要分開購買嗎？" name="2">
+                    <el-collapse-item title="二、不同故事需要分開購買嗎？" name="2">
                         <div>
-                            1. 目前僅須購買 1 次註冊碼，即可使用網站上全部 4 個劇本的內容。
+                            1. 目前僅須購買 1 次註冊碼，即可使用網站上全部 4 個故事的內容。
                         </div>
                         <div>
-                            2. 若往後推出新劇本會依情況再考慮是否加收費用。
+                            2. 若往後推出新故事會依情況再考慮是否加收費用。
                         </div>
                     </el-collapse-item>
                     <el-collapse-item title="三、如何退費？" name="3">

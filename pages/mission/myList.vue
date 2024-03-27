@@ -25,7 +25,7 @@
                 <el-table :data="allData" style="width: 100%" empty-text="暫無數據">
                     <el-table-column prop="taskName" label="任務名稱" sortable min-width="160">
                     </el-table-column>
-                    <el-table-column prop="script" label="劇本" sortable min-width="160">
+                    <el-table-column prop="script" label="故事" sortable min-width="160">
                         <template #default="scope">
                             {{ getScriptNameById(scope.row.scriptId) }}
                         </template>
@@ -70,11 +70,16 @@
             <div @click="isShowAdd = false" class="box">
                 <div @click.stop class="block-box">
                     <div class="title">
-                        <span>建立新任務(點擊 Ⓘ 說明)</span>
+                        <div>
+                            <div>建立新任務</div>
+                            
+                        </div>
                         <el-popover :width="700" trigger="click">
                             <template #reference>
                                 <img class="information" src="@/assets/images/Icon/information.svg" alt="close">
+                                <div class="desc-title">點擊說明</div>
                             </template>
+                            
                             <div class="container">
                                 <ol>
                                     <!-- <li class="list-item">
@@ -87,10 +92,10 @@
                                         各欄位說明。
                                         <ul class="sub-list">
                                             <li class="sub-list-item">任務名稱：可輸入要帶領的班級名稱，方便自己辨識，例如：一年三班。</li>
-                                            <li class="sub-list-item">選擇劇本：選擇欲使用的劇本，共有 4 篇可選，各有不同的帶領天數。</li>
+                                            <li class="sub-list-item">選擇故事：選擇欲使用的故事，共有 4 篇可選，各有不同的帶領天數。</li>
                                             <li class="sub-list-item">學習對象：選擇帶領的對象年齡層，此資料將作為阿普蛙後台統計使用。</li>
                                             <li class="sub-list-item">預期參與組數：建議輸入預計分成的組數。</li>
-                                            <li class="sub-list-item">結束日期：輸入此劇本預計帶領完畢的日期，建議可以多抓幾天，避免影片 QR Code 失效。</li>
+                                            <li class="sub-list-item">結束日期：輸入此故事預計帶領完畢的日期，建議可以多抓幾天，避免影片 QR Code 失效。</li>
                                             <li class="sub-list-item">點選「確認」鍵。</li>
                                         </ul>
                                     </li>
@@ -109,11 +114,12 @@
                                 </ol>
                             </div>
                         </el-popover>
+                        <div class="desc-title">點擊說明符號</div>
 
                     </div>
                     <div class="item-title">*任務名稱</div>
                     <div><input v-model="addData.taskName" class="input" placeholder="請輸入文字" type="text"></div>
-                    <div class="item-title">*選擇劇本</div>
+                    <div class="item-title">*選擇故事</div>
                     <div class="select-container">
                         <select v-model="addData.scriptId" class="select">
                             <option :value="item.value" v-for="item of scriptOption" :key="item.value">{{ item.text }}
@@ -144,7 +150,7 @@
                     <div class="title">編輯任務</div>
                     <div class="item-title">*任務名稱</div>
                     <div><input v-model="current.taskName" class="input" placeholder="請輸入文字" type="text"></div>
-                    <div class="item-title">*選擇劇本</div>
+                    <div class="item-title">*選擇故事</div>
                     <div class="select-container">
                         <select v-model="current.scriptId" class="select">
                             <option :value="item.value" v-for="item of scriptOption" :key="item.value">{{ item.text }}
@@ -307,7 +313,7 @@ async function handleAddUser() {
         })
     } else if (addData.scriptId === '') {
         ElMessage({
-            message: '請選擇劇本！',
+            message: '請選擇故事！',
             type: 'warning',
         })
     } else if (addData.learning === '') {
@@ -383,7 +389,7 @@ async function save() {
         })
     } else if (current.scriptId === '') {
         ElMessage({
-            message: '請選擇劇本！',
+            message: '請選擇故事！',
             type: 'warning',
         })
     } else if (current.learning === '') {
@@ -443,6 +449,13 @@ async function deleteCurrentData() {
 @import '~/assets/styles/form.scss';
 @import '~/assets/styles/manage.scss';
 @import '~/assets/styles/table.scss';
+
+.desc-title {
+    margin: 6px 0px 0px 6px;
+    text-decoration: underline;
+    color: blue;
+    font-size: 16px;
+}
 
 .container {
     width: 80%;

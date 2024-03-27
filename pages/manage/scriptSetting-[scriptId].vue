@@ -28,22 +28,22 @@
 
             <div v-if="isEdited" class="step-day-outer">
                 <div class="step-day-row">
-                    <div class="step-day-title5">劇本封面</div>
+                    <div class="step-day-title5">故事封面</div>
                     <div class="step-day-img">
                         <img v-if="scriptData.hasImg" :src="imgUrl"
                             alt="">
                     </div>
                 </div>
                 <div class="step-day-row step-day-space-start">
-                    <div class="step-day-title5">劇本名稱</div>
+                    <div class="step-day-title5">故事名稱</div>
                     <div class="step-day-text">{{ scriptData.title }}</div>
                 </div>
                 <div class="step-day-row step-day-space-start">
-                    <div class="step-day-title5">劇本簡述</div>
+                    <div class="step-day-title5">故事簡述</div>
                     <div class="step-day-text">{{ scriptData.description }}</div>
                 </div>
                 <div class="step-day-row step-day-space-start">
-                    <div class="step-day-title5">劇本時長 (天)</div>
+                    <div class="step-day-title5">故事時長 (天)</div>
                     <div class="step-day-text">{{ scriptData.scriptPeriod }}天</div>
                 </div>
                 <div class="step-day-row step-day-space-start">
@@ -74,7 +74,7 @@
 
             <!-- 編輯狀態 -->
             <div v-else class="step-body">
-                <div class="step-body-title">*劇本封面</div>
+                <div class="step-body-title">*故事封面</div>
                 <div v-if="!isPhoto" class="step-body-upload">上傳圖片</div>
                 <div v-if="!isPhoto" class="step-body-upload-hint">尺寸建議為 1920 x 300px</div>
                 <input type="file" accept=".jpg,.jpeg,.png" ref="fileInput" style="display: none;" @change="changeFile" name="" id="">
@@ -86,12 +86,12 @@
                     <span>上傳圖片</span>
                 </div>
 
-                <div class="step-body-title">*劇本名稱</div>
-                <input v-model="editData.title" class="input step-body-input" placeholder="請輸入劇本名稱" type="text">
-                <div class="step-body-title">*劇本簡述</div>
+                <div class="step-body-title">*故事名稱</div>
+                <input v-model="editData.title" class="input step-body-input" placeholder="請輸入故事名稱" type="text">
+                <div class="step-body-title">*故事簡述</div>
                 <input v-model="editData.description" class="input step-body-input" placeholder="ex.潛在霸凌者需求：生理需求"
                     type="text">
-                <div class="step-body-title">*劇本時長 (日)</div>
+                <div class="step-body-title">*故事時長 (日)</div>
                 <input v-model="editData.scriptPeriod" class="input step-body-input2" placeholder="請輸入數值" type="number"
                     :min="2">
                 <div class="step-body-hint">最少 2 日</div>

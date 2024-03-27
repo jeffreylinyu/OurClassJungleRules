@@ -2,19 +2,19 @@
     <NuxtLayout name="custom">
         <div class="manage">
             <div class="manage-between">
-                <div class="manage-head">劇本教材管理</div>
+                <div class="manage-head">故事教材管理</div>
                 <div class="manage-row">
                     <div class="manage-num">項目數量：{{ allData.length }}</div>
-                    <nuxt-link to="/manage/buildScript" class="manage-create">+ 建立劇本教材</nuxt-link>
+                    <nuxt-link to="/manage/buildScript" class="manage-create">+ 建立故事教材</nuxt-link>
                 </div>
 
             </div>
 
             <div class="Mtable">
                 <el-table :data="allData" style="width: 100%" empty-text="暫無數據">
-                    <el-table-column prop="title" label="劇本名稱" sortable min-width="160">
+                    <el-table-column prop="title" label="故事名稱" sortable min-width="160">
                     </el-table-column>
-                    <el-table-column prop="scriptPeriod" label="劇本時長" sortable min-width="160">
+                    <el-table-column prop="scriptPeriod" label="故事時長" sortable min-width="160">
                         <template #default="scope">
                             {{ scope.row.scriptPeriod }}
                         </template>
@@ -45,7 +45,7 @@
                 <div @click="isShowDelete = false" class="box">
                     <div @click.stop class="block-box">
                         <div class="title">刪除提醒</div>
-                        <div class="box-hint">劇本刪除後將無法復原，您確認要刪除？</div>
+                        <div class="box-hint">故事刪除後將無法復原，您確認要刪除？</div>
                         <div class="box-row">
                             <div @click="isShowDelete = false" class="box-cancel">取消</div>
                             <div @click="deleteCurrentData" class="box-delete">刪除</div>

@@ -3,18 +3,18 @@
     <div class="box">
       <div class="top-block">
         <div class="text-box">
-          <div class="text1">共創友善校園：<br>人際衝突&nbsp; X &nbsp;預防霸凌，<br>啟動學生正面力量！</div>
+          <div class="text1">人際衝突&nbsp; X &nbsp;預防霸凌，<br>共創友善校園：啟動學生正面力量！</div>
+          <div class="sub">數位教材｜互動式影片｜一套帶全班</div>
           <div class="text2">
-            打造專為國小校園設計的全新教材！<br>
-            這套教學教材包含 4 個人際衝突的故事，<br>
-            每位角色背後都隱藏著不同的需求。<br>
-            透過生動的故事，學生們將在每段劇情中做出關鍵選擇，<br>
-            推進劇情發展，而他們的決定將共同決定故事的最終結局！
+            專為國小校園設計的全新數位教材！<br>
+            透過融入 4 個人際衝突的故事，<br>
+            學生們練習在事件中做出關鍵選擇，<br>
+            推進發展，共同決定故事的最終結局。
           </div>
         </div>
         <div class="background"></div>
       </div>
-      <div class="top-over">
+      <!-- <div class="top-over">
         <div class="layer"></div>
       </div>
       <div class="second-block">
@@ -40,7 +40,7 @@
       </div>
       <div class="second-over">
         <div class="layer"></div>
-      </div>
+      </div> -->
     </div>
     <div class="third-block">
       <div class="content-box">
@@ -52,9 +52,10 @@
             ></div>
             <div class="item-title">{{ data.head }}</div>
             <div class="item-content">
-              故事大綱：{{ data.story }}<br>
-              需求類型：{{ data.type }}<br>
-              操作時間：{{ data.time }}<br>
+              <span style="font-weight: bold;">故事大綱：</span>{{ data.story }}<br>
+              <span style="font-weight: bold;">需求類型：</span>{{ data.type }}<br>
+              <span style="font-weight: bold;">適合年級：</span>{{ data.grade }}<br>
+              <span style="font-weight: bold;">操作時間：</span>{{ data.time }}<br>
             </div>
             <div @click="videoPlay(data.video)" class="item-btn">
               <span class="btn-span">第一日影片試播</span>
@@ -101,14 +102,14 @@
           4 則故事的複雜度各不相同，所以進行天數也不同，例《萌虎怎麼了》的故事比較單純，只需要操作 2 天，適合國小中年級或老師們第一次操作；《班長是公僕還是國王》的故事最為複雜且跟學生的人際發展有關，要進行 5 天，適合國小高年級或較熟悉流程的老師操作。
         </div>
 
-        <div class="about">
+        <!-- <div class="about">
           <div class="about-head">關於結局</div>
           <div class="about-text">
             每篇故事的結局有四種，由四位老師代表不同的衝突處理方式。整班同學的選擇，將在結局時召喚其中一位老師，反映出學生在處理衝突時的傾向。<br><br>
             我們認為處理班級衝突時，需要關注學生間及師生間的「關係」，且須兼顧班級「秩序」 。從關係和秩序的兩個向度，可交織出四種象限：
           </div>
           <img class="about-img" src="~assets/images/result_rules2.png" alt="">
-        </div>
+        </div> -->
 
       </div>
 
@@ -126,12 +127,13 @@
             *本教材可使用折扣碼<br>
             *首賣折扣碼「nobullying」，再折 300 元。<br><br>
 
-            內含：<br>
-            教學簡報 X 4<br>
-            故事影片 X 26<br>
-            學習單 X 14<br>
-            線上計分系統<br>
-            詳細操作說明
+            本教材皆為數位內容（無實體教材），內含：<br>
+            1. 可下載的教學簡報檔案 x4<br>
+            2. 可下載的學習單檔案 x4<br>
+            3. 線上故事影片 x26<br>
+            4. 線上計分系統<br>
+            5. 線上詳細操作說明
+
           </div>
           <div class="intro-title">***購買一套即可全班操作***</div>
           <div class="intro-text">
@@ -144,11 +146,12 @@
             戲劇體驗：融入虛構的叢林班日常，透過生動戲劇影片，一同探討角色未來的選擇。<br>
             引導反思：從角色感受與需求出發，引導深入討論合理的因應策略，讓學生更理解彼此的情感需求。
           </div>
+          <div class="intro-buy">立即購買</div>
         </div>
 
         <div class="intro-imgs">
           <img class="intro-img-big" src="~assets/images/index/class2.jpg" alt="">
-          <div class="">
+          <div class="intro-row-2">
             <div class="intro-column">
               <img class="intro-img1" src="~assets/images/index/ppt.png" alt="">
               <div class="intro-sub">教學簡報檔</div>
@@ -158,7 +161,7 @@
               <div class="intro-sub">學習單</div>
             </div>
           </div>
-          <div class="intro-buy">立即購買</div>
+          
         </div>
       </div>
     </div>
@@ -169,7 +172,7 @@
       感謝基隆市中和國小、仁愛國小協助遊戲測試！<br>
       感謝蘇明進老師、杜佳憲主任、王振皓老師、陳俞君老師協助測試，並提供寶貴意見！
     </div>
-    <getTextbooks></getTextbooks>
+    <!-- <getTextbooks></getTextbooks> -->
     <div class="centerDialog">
       <client-only>
           <el-dialog v-model="centerDialogVisible">
@@ -204,8 +207,9 @@ const newScript = reactive([
     id: '0',
     img: '../assets/images/scripts/body.jpg',
     head: '《萌虎怎麼了》',
-    story: '萌虎有過動症，某天因為不滿同學的開玩笑，難以控制情緒而引發衝突。',
+    story: '萌虎有過動症，某天因為不滿同學的玩笑，難以控制情緒而引發衝突。',
     type: '生理需求',
+    grade: '中、高年級',
     time: '10 分鐘＋一節課',
     video: 'https://storage.googleapis.com/wasupstudio-bucket/video/1703443475693.mp4'
   },
@@ -215,6 +219,7 @@ const newScript = reactive([
     head: '《為什麼不跟我玩》',
     story: '俏鼠想要跟同學玩，卻不知道「一直戳」同學，會讓他人感到不舒服。',
     type: '玩樂需求',
+    grade: '中、高年級',
     time: '10 分鐘 x2＋一節課',
     video: 'https://storage.googleapis.com/wasupstudio-bucket/video/1703445014261.mp4'
   },
@@ -222,8 +227,9 @@ const newScript = reactive([
     id: '2',
     img: '../assets/images/scripts/friend.jpg',
     head: '《金馬的秘密》',
-    story: '金馬為了融入籃球校隊的群體，卻不知道該如何拒絕不合理的要求，反而傷害了原本要好的同學。',
+    story: '金馬為了融入群體，卻不知道該如何拒絕不合理的要求，反而傷害了原本要好的同學。',
     type: '同儕歸屬',
+    grade: '中、高年級',
     time: '10 分鐘 x3＋一節課',
     video: 'https://storage.googleapis.com/wasupstudio-bucket/video/1703445184614.mp4'
   },
@@ -231,8 +237,9 @@ const newScript = reactive([
     id: '3',
     img: '../assets/images/scripts/power.jpg',
     head: '《班長是公僕還是國王》',
-    story: '班長為了帶領班上獲得好的班級競賽成績，與同學們制定了班規，在執行新班規的期間，逐漸累積了「民怨」。',
+    story: '班長為了提升班級競賽的名次，與同學們制定了班規，卻在執行期間逐漸累積了「民怨」。',
     type: '權力與掌握',
+    grade: '高年級',
     time: '10分鐘 x4＋一節課',
     video: 'https://storage.googleapis.com/wasupstudio-bucket/1697747252310.mp4'
   },
@@ -392,15 +399,25 @@ nextTick(() => {
           font-weight: 700;
           font-size: 42px;
           color: $primary1;
-          margin-bottom: 40px;
+          margin-bottom: 10px;
           letter-spacing: 1.5px;
 
           @include respond-to('phone') {
             font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            width: 70%;
+            width: 100%;
           }
+        }
+
+        .sub {
+          font-size: 34px;
+          font-weight: 700;
+          color: #FFC300;
+          margin-bottom: 40px;
+
+          @include respond-to('phone') {
+            font-size: 32px;
+          }
+
         }
 
         .text2 {
@@ -723,7 +740,7 @@ nextTick(() => {
               height: 45px;
               text-align: center;
               width: 85%;
-
+              font-weight: bold;
             }
 
             &-content {
@@ -896,7 +913,7 @@ nextTick(() => {
   // 介紹
 
   .intro {
-    padding: 20px 30px 20px;
+    padding: 40px 30px 40px;
     background-color: #007362;
     color: white;
       
@@ -916,12 +933,26 @@ nextTick(() => {
     }
 
     &-content {
-      
+      width: 40%;
+
+      @include respond-to('phone') {
+        width: 100%;
+      }
     }
 
     &-row {
       display: flex;
       align-items: flex-end;
+    }
+
+    &-row-2 {
+      display: flex;
+
+      @include respond-to('phone') {
+        flex-direction: column;
+        justify-content: center;
+      }
+
     }
 
     &-price {
@@ -933,6 +964,7 @@ nextTick(() => {
     &-price-old {
       margin-left: 20px;
       font-size: 24px;
+      text-decoration: line-through;
     }
 
     &-text {
@@ -956,11 +988,16 @@ nextTick(() => {
     }
 
     &-imgs {
+      width: 60%;
       margin-top: 20px;
+
+      @include respond-to('phone') {
+        width: 100%;
+      }
     }
 
     &-img-big {
-      width: 300px;
+      width: 400px;
       margin: auto;
       
       @include respond-to('phone') {
@@ -969,21 +1006,21 @@ nextTick(() => {
     }
 
     &-img1 {
-      width: 300px;
+      width: 400px;
       margin: auto;
       
       @include respond-to('phone') {
-        width: 90%;
+        width: 100%;
       }
 
     }
 
     &-img2 {
-      width: 200px;
+      width: 300px;
       margin: auto;
       
       @include respond-to('phone') {
-        width: 90%;
+        width: 100%;
       }
 
     }

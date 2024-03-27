@@ -288,6 +288,7 @@
                 <div v-if="currentPeriod == scriptData.dayEnd" class="mission-body">
                     <div class="mission-body-head">帶領方式說明</div>
                     <div class="mission-body-text">{{ currentDetail.endingDescription }}</div>
+                    <img style="margin: 12px 0px 0px;" src="~assets/images/result_rules2.png" alt="">
                     <div class="mission-body-head">建議進行時間</div>
                     <div class="mission-body-text">{{ currentDetail.advisoryTime }}分鐘</div>
                     <div class="mission-body-line"></div>
@@ -453,7 +454,7 @@
                         <div class="title">編輯任務</div>
                         <div class="item-title">*任務名稱</div>
                         <div><input v-model="taskEditData.taskName" class="input" placeholder="請輸入文字" type="text"></div>
-                        <div class="item-title">*選擇劇本</div>
+                        <div class="item-title">*選擇故事</div>
                         <div style="margin-bottom: 16px;" class="select-container">
                             <select v-model="taskEditData.scriptId" class="select">
                                 <option :value="item.value" v-for="item of scriptOption" :key="item.value">{{ item.text }}
@@ -1019,7 +1020,7 @@ async function saveTaskEdit() {
         })
     } else if (taskEditData.scriptId === '') {
         ElMessage({
-            message: '請選擇劇本！',
+            message: '請選擇故事！',
             type: 'warning',
         })
     } else if (taskEditData.estimatedParticipants === '') {

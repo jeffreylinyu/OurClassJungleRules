@@ -10,7 +10,7 @@
         <div v-if="routeName == 'index'" class="decoration"></div>
       </nuxt-link>
       <!-- <div class="link sublink" :class="{ 'link-action': routeName == 'chapter' }">
-        劇本介紹 ▾
+        故事介紹 ▾
         <div v-if="routeName == 'chapter'" class="decoration"></div>
         <div class="subbox">
           <div class="arrow"></div>
@@ -58,7 +58,7 @@
               <div class="subitem">商品管理</div>
             </nuxt-link>
             <nuxt-link to="/manage/script">
-              <div class="subitem">劇本教材管理</div>
+              <div class="subitem">故事教材管理</div>
             </nuxt-link>
             <nuxt-link to="/manage/purchaseInformation">
               <div class="subitem">購買資訊</div>
@@ -106,7 +106,7 @@
         </nuxt-link>
         <!-- <div class="link sublink" @click="isOpenSubbox = !isOpenSubbox"
           :class="{ 'link-action': routeName == 'chapter' }">
-          劇本介紹 <span>▾</span>
+          故事介紹 <span>▾</span>
         </div>
         <div v-if="isOpenSubbox" class="subbox">
           <div class="arrow"></div>
@@ -144,7 +144,7 @@
             商品管理
           </nuxt-link>
           <nuxt-link to="/manage/script" class="link" :class="{ 'link-action': routeName == 'manage-script' }">
-            劇本教材管理
+            故事教材管理
           </nuxt-link>
           <nuxt-link to="/manage/purchaseInformation" class="link" :class="{ 'link-action': routeName == 'manage-purchaseInformation' }">
             購買資訊
