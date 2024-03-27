@@ -9,7 +9,7 @@
         首頁
         <div v-if="routeName == 'index'" class="decoration"></div>
       </nuxt-link>
-      <div class="link sublink" :class="{ 'link-action': routeName == 'chapter' }">
+      <!-- <div class="link sublink" :class="{ 'link-action': routeName == 'chapter' }">
         劇本介紹 ▾
         <div v-if="routeName == 'chapter'" class="decoration"></div>
         <div class="subbox">
@@ -20,7 +20,7 @@
             </nuxt-link>
           </div>
         </div>
-      </div>
+      </div> -->
       <a href="https://www.wasupstudio.com/about.html" target="_blank" class="link" :class="{ 'link-action': routeName == 'about' }">關於阿普蛙
         <div v-if="routeName == 'about'" class="decoration"></div>
       </a>
