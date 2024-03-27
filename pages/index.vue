@@ -71,7 +71,7 @@
           </div>
 
           <div class="method-box">
-            <img class="method-img" src="~assets/images/cover_material.png" alt="">
+            <img class="method-img" src="~assets/images/index/class1.jpg" alt="">
             <div class="method-row">
               <div class="method-day">Day 1<br>10分鐘</div>
               <div class="method-text">
@@ -147,14 +147,14 @@
         </div>
 
         <div class="intro-imgs">
-          <img class="intro-img-big" src="~assets/images/result_rules2.png" alt="">
-          <div class="intro-row">
+          <img class="intro-img-big" src="~assets/images/index/class2.jpg" alt="">
+          <div class="">
             <div class="intro-column">
-              <img class="intro-img" src="~assets/images/result_rules2.png" alt="">
+              <img class="intro-img1" src="~assets/images/index/ppt.png" alt="">
               <div class="intro-sub">教學簡報檔</div>
             </div>
             <div class="intro-column">
-              <img class="intro-img" src="~assets/images/result_rules2.png" alt="">
+              <img class="intro-img2" src="~assets/images/index/learn.png" alt="">
               <div class="intro-sub">學習單</div>
             </div>
           </div>
@@ -960,7 +960,7 @@ nextTick(() => {
     }
 
     &-img-big {
-      width: 350px;
+      width: 300px;
       margin: auto;
       
       @include respond-to('phone') {
@@ -968,11 +968,22 @@ nextTick(() => {
       }
     }
 
-    &-img {
-      width: 280px;
+    &-img1 {
+      width: 300px;
+      margin: auto;
       
       @include respond-to('phone') {
-        width: 50vw;
+        width: 90%;
+      }
+
+    }
+
+    &-img2 {
+      width: 200px;
+      margin: auto;
+      
+      @include respond-to('phone') {
+        width: 90%;
       }
 
     }
