@@ -348,11 +348,15 @@ async function handleAddUser() {
     }
 }
 
+const currentDay = new Date()
+currentDay.setDate(currentDay.getDate() + 7)
+console.log(currentDay.toISOString().slice(0, 10))
+
 const initAddData = () => {
     addData.author = ""
     addData.createTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
     addData.description = ""
-    addData.endTime = ""
+    addData.endTime = currentDay.toISOString().slice(0, 10)
     addData.estimatedParticipants = 0
     addData.learning = 0
     addData.memberId = 0
