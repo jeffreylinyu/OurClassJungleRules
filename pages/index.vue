@@ -146,7 +146,6 @@
             戲劇體驗：融入虛構的叢林班日常，透過生動戲劇影片，一同探討角色未來的選擇。<br>
             引導反思：從角色感受與需求出發，引導深入討論合理的因應策略，讓學生更理解彼此的情感需求。
           </div>
-          <div class="intro-buy">立即購買</div>
         </div>
 
         <div class="intro-imgs">
@@ -164,6 +163,7 @@
           
         </div>
       </div>
+      <div @click="isPaidMemberDialogShow = true" class="intro-buy">立即購買</div>
     </div>
 
     <div class="new-content">
@@ -180,6 +180,7 @@
           </el-dialog>
       </client-only>
   </div>
+  <PaidMemberDialog v-model="isPaidMemberDialogShow"></PaidMemberDialog>
   </NuxtLayout>
 </template>
 
@@ -244,6 +245,11 @@ const newScript = reactive([
     video: 'https://storage.googleapis.com/wasupstudio-bucket/1697747252310.mp4'
   },
 ])
+
+let isPaidMemberDialogShow = ref(false)
+const closeDialog = () => {
+  isPaidMemberDialogShow.value = false
+}
 
 const currentVideoUrl = ref("")
 const centerDialogVisible = ref(false)
