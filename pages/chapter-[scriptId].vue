@@ -137,7 +137,7 @@
                 <div @click="isShowInfo = false" class="box">
                     <div @click.stop class="block-box">
                         <div class="title">劇情內容</div>
-                        <div class="text">{{ showContent }}</div>
+                        <div class="text" v-html="showContent"></div>
                     </div>
                 </div>
             </div>
