@@ -864,10 +864,10 @@ const setScoreOverview = async () => {
         allTotal.relation += relation
     }
     if (allTotal.orderly == 0) {
-        allTotal.orderly = 1
+        allTotal.orderly = -1
     }
     if (allTotal.relation == 0) {
-        allTotal.relation = 1
+        allTotal.relation = -1
     }
     setEndQuadrant(allTotal.orderly, allTotal.relation)
 }
