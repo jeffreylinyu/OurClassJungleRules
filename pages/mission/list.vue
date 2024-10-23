@@ -32,6 +32,8 @@
                     </el-table-column>
                     <el-table-column prop="statusStr" label="任務狀態" sortable min-width="160">
                     </el-table-column>
+                    <el-table-column prop="author" label="使用者" sortable min-width="160">
+                    </el-table-column>
                     <el-table-column prop="endTime" label="結束時間" sortable min-width="160">
                     </el-table-column>
                     <el-table-column prop="createTime" label="建立時間" sortable min-width="160">
@@ -52,7 +54,7 @@
 </template>
 
 <script setup>
-import { getMyTask } from "~/api/task";
+import { getAllTask } from "~/api/task";
 import { getScript } from "~/api/script";
 
 const checkMission = (taskId) => {
@@ -107,7 +109,7 @@ const getScriptNameById = (id) => {
 
 const allData = reactive([])
 async function init() {
-    const { data } = await getMyTask()
+    const { data } = await getAllTask()
     let list = JSON.parse(JSON.stringify(data.value.data.list))
     list = list.filter(o => o.status !== 2)
     list.map((o) => {
